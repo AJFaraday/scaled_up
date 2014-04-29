@@ -23,3 +23,21 @@ sample_groups = {
 }
 SampleGroup.create_from_hash(sample_groups)
 
+unless EventProfile.find_by_name('Chromatic Bass')
+  EventProfile.create({
+    name: 'Chromatic Bass',
+    no_of_notes: 1, 
+    min_note: 36,
+    max_note: 60
+  })
+end
+
+unless EventProfile.find_by_name('Pentatonic Bass')
+  EventProfile.create({
+    name: 'Pentatonic Bass',
+    no_of_notes: 1, 
+    min_note: 36,
+    max_note: 60,
+    midi_notes: [36,39,41,43,46,48,51,53,55,57,60]
+  })
+end
