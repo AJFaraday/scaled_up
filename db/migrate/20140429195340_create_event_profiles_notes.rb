@@ -1,8 +1,8 @@
 class CreateEventProfilesNotes < ActiveRecord::Migration
   def change
     create_table :event_profiles_notes do |t|
-      t.belongs_to :event_profile
-      t.belongs_to :note
+      t.integer :event_profile_id
+      t.integer :note_id
     end
   end
 end
