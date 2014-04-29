@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  no_of_notes: 1
+  sample: false
+  min_note: 1
+  max_note: 1
+  ip_address: MyString
+  port: 1
+
+two:
+  name: MyString
+  no_of_notes: 1
+  sample: false
+  min_note: 1
+  max_note: 1
+  ip_address: MyString
+  port: 1
