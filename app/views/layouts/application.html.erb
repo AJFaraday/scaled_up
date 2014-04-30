@@ -3,12 +3,25 @@
 <head>
   <title>ScaledUp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag params[:controller] %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class='holder'>
+
+    <div class='header'>
+      <h1>Scaled Up^</h1>
+    </div> 
+
+    <div class='main'>
+
+      <%= yield %>
+
+    </div>
+
+  </div>
 
 </body>
 </html>
