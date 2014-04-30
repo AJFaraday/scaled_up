@@ -1,10 +1,13 @@
 function init_keyboard() {
   $('.note.active').on('click', function() {
     if ($(this).hasClass("selected")) {
-      $(this).removeClass("selected")
+      $(this).removeClass("selected");
     } else {
       $(this).addClass("selected");
-    }
+      midi_note = $(this).data('value');
+      current_val = $("#event_midi_notes").val();
+      $("#event_midi_notes").val(current_val+','+midi_note);
+    } 
   });
 }
 

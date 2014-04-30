@@ -1,7 +1,20 @@
 class Event < ActiveRecord::Base
 
 
-  has_and_belongs_to_many :notes
+  has_and_belongs_to_many :notes do
+
+    def for_octave(octave)
+      min = (octave * 12) + 12
+      max = min + 11
+      notes.where(midi_note: (min..max))
+    end
+
+    def names
+      collect{|x|x.name}
+    end
+
+
+  end
   
   belongs_to :sample
 
@@ -33,5 +46,10 @@ class Event < ActiveRecord::Base
       ['Semibreve', 4]
     ]
   end
+
+  def has_note?(note_name)
+    notes.names.include?(note_name)
+  end
+
 
 end

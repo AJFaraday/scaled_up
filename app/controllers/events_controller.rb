@@ -14,8 +14,9 @@ class EventsController < ApplicationController
 
   def get_event
     if params[:event]
-      event_params = params.require(:event).permit(:source,:event_profile_id,:length)
+      event_params = params.require(:event).permit(:source,:event_profile_id,:length,:midi_notes)
       @event = Event.new(event_params)
+      @event.midi_notes = params[:event][:midi_notes].split(',').compact.uniq.collect{|x|x.to_i}
     else
       @event = Event.new
     end
