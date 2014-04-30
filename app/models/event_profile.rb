@@ -29,4 +29,15 @@ class EventProfile < ActiveRecord::Base
   end
 
 
+  #
+  # returns a sorted arraty of midi octaves for the related notes 
+  #
+  def octaves
+    if notes.any?
+      notes.collect{|n|n.name[-1]}.uniq.sort
+    else 
+      []
+    end 
+  end 
+
 end
