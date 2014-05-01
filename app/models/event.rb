@@ -29,6 +29,7 @@ class Event < ActiveRecord::Base
   end 
 
   attr_accessor :midi_notes
+  serialize :midi_notes, Array
   
   def midi_notes
     self.notes.collect{|x|x.midi_note}

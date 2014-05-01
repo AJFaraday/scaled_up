@@ -1,25 +1,39 @@
 <%= form_for(@event) do |f| %>
 
-  <p>
-    <%= f.label :event_profile_id %>
-    <%= f.select :event_profile_id, EventProfile.select_options %>
-  </p>
+  <%= hidden_field_tag :note_requirement, @event_profile.no_of_notes %>
 
   <p>
     <%= f.label :source %>
     <%= f.text_field :source %>
   </p>
 
-  <p>
-    <%= f.label :length %>
-    <%= f.select :length, Event.length_options %>
-  </p>
 
-  <%= f.hidden_field :midi_notes %>
-  <div class='notes_field'>
-    <% @event.octaves.each do |octave| %>
-      <%= render 'octave_field', octave: octave %>
-    <% end %>
+  <div id='main_form' style="display:none;">
+
+    <p>
+      <%= f.label :event_profile_id %>
+      <%= f.select :event_profile_id, EventProfile.select_options %>
+    </p>
+
+    <p>
+      <%= f.label :length %>
+      <%= f.select :length, Event.length_options %>
+    </p>
+
+    <div id='midi_fields'>
+      <% @event.midi_notes.each_with_index do |midi_note,index| %>
+        <input type='hidden' 
+               name="event[midi_notes][<%=index%>]"
+               value="<%= midi_note %>" />
+      <% end %>
+    </div>
+
+    <div class='notes_field'>
+      <% @event.octaves.each do |octave| %>
+        <%= render 'octave_field', octave: octave %>
+      <% end %>
+    </div>
+ 
   </div>
 
 <% end %>

@@ -41,3 +41,13 @@ unless EventProfile.find_by_name('Pentatonic Bass')
     midi_notes: [36,39,41,43,46,48,51,53,55,57,60]
   })
 end
+
+unless EventProfile.find_by_name('Three Notes')
+  EventProfile.create({
+    name: 'Three Notes',
+    no_of_notes: 3,
+    min_note: 48,
+    max_note: 60
+  })
+end
+
