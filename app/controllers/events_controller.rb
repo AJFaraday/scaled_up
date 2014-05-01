@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :get_event, :only => [:new,:renew_form]
+  before_filter :get_event, :only => [:new,:renew_form, :create]
 
   def new
 
@@ -9,6 +9,17 @@ class EventsController < ApplicationController
   def renew_form
 
   end 
+
+  def create
+    if @event.valid?
+      @event.save
+      @saved = true 
+      @event = @event.dup
+      puts @event.inspect
+    else 
+      @saved = false 
+    end
+  end
 
   protected
 

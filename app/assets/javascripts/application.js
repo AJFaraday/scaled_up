@@ -16,3 +16,6 @@
 //= require_tree .
 //
 //= jquery.turbolinks
+//
+//= require bootstrap
+//= require bootstrap/modal

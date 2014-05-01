@@ -47,7 +47,7 @@ unless EventProfile.find_by_name('Three Notes')
     name: 'Three Notes',
     no_of_notes: 3,
     min_note: 48,
-    max_note: 60
+    max_note: 59
   })
 end
 

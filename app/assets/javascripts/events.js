@@ -40,7 +40,17 @@ function init_keyboard() {
 function submit_if_complete() {
   var req_notes = parseInt($('#note_requirement').val(),10);
   if ($('#midi_fields :input').length >= req_notes) {
-    $('form#new_event').submit();
+    $('#waiting_modal').modal('show');
+    $('#processing_message').show();
+    $('#waiting_message').hide();
+    $('#waiting_countdown').hide();
+    
+    $.ajax({
+      url: '/events',
+      type: 'POST',
+      data: $('#new_event').serialize(),
+      dataType: 'script'
+    });
   }
 } 
 
@@ -54,6 +64,7 @@ function init_form(){
     }
   });
   show_form_if_source();
+  init_modal();
 }
 
 function show_form_if_source(){
@@ -78,3 +89,11 @@ $(document).ready(function(){
   init_form();
 
 });
+
+function init_modal() {
+  $('#waiting_modal').modal({
+    keyboard: false,
+    show: false,
+    backdrop: 'static'
+  })
+}

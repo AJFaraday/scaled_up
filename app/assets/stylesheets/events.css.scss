@@ -11,12 +11,18 @@ $black_note_inactive: #555555 ;
 $keyboard_back: #4656EB ;
 $key_offset: 40px;
 
+.massive {
+  font-size: 200px;
+}
+
 .octave {
   position:relative;
   float: left;
   width: 280px;
   height: 100px;
   background-color: $keyboard-back ; 
+  -webkit-box-sizing: content-box ;
+  box-sizing: content-box ; 
 } 
 
 
@@ -37,7 +43,7 @@ $key_offset: 40px;
     &.black{
       background-color: $black_note ;
       color: $white_note ;
-      height:50px;
+      height:58px;
       z-index: 2 ;
       width: 25px;
       &:hover {
@@ -54,7 +60,7 @@ $key_offset: 40px;
     &.white{
       background-color: $white_note ;
       color: $black_note ;
-      height:18px;
+      height:78px;
       z-index: 1 ;
       width: 38px;
       padding-top: 60px; 

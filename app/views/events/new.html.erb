@@ -1,1 +1,4 @@
 <%= render :partial => 'form' %>
+<% content_for :after_main do %> 
+  <%= render :partial => 'waiting_modal' %>
+<% end %>
