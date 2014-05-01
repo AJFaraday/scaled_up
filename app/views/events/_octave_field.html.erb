@@ -1,0 +1,23 @@
+<div class='octave'>
+  <div 
+    class='octave_label'
+    id='octave_<%= octave %>'
+  >
+    Octave <%= octave %>
+  </div>
+  <% Note::NOTE_NAMES.each do |note_name| %>
+    <% full_note_name = "#{note_name}#{octave}" %>
+    <div 
+      class='
+        note 
+        <%= note_colour(note_name) %> 
+        <%= note_name.gsub('#','-sharp') %>
+        <%= @event_profile.has_note?(full_note_name) ? 'active' : 'inactive' %>
+        <%= 'selected' if @event.has_note?(full_note_name)%>
+      '
+      data-value='<%= Note.find_by_name(full_note_name).midi_note %>'
+    >
+      <%= note_name %>
+    </div>
+  <% end %>
+</div>
