@@ -18,6 +18,7 @@ class Event < ActiveRecord::Base
   belongs_to :sample
 
   belongs_to :event_profile
+  has_one :event_message
 
   delegate :octaves, :to => :event_profile
 
@@ -42,7 +43,8 @@ class Event < ActiveRecord::Base
       event_id: self.id,
       event_profile_id: self.event_profile_id,
       played: false,
-      content: @message
+      content: @message,
+      display_message: "#{self.source.ljust(20)} - #{self.event_profile.name.ljust(20)} - #{@message}"
     )
   end
 

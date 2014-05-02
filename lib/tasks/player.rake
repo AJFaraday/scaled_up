@@ -1,9 +1,11 @@
+require 'socket'
+
 namespace :player do
 
   desc "Play through event messages at a given interval"
   task :play => :environment do
     # connect to pure data, or remove from list
-    @event_profiles = EventProfile.all.collect do |event_profile|
+    @event_profiles = EventProfile.all.select do |event_profile|
       event_profile.pd_connection ? true : false
     end 
     if @event_profiles.any?
@@ -15,15 +17,17 @@ namespace :player do
     else
       raise "No event profiles can make a connection!" 
     end
+    # This is the important loop
     loop do
-      @messages_to_play = []
-      
+      @messages_to_play = []      
       @event_profiles.each do |event_profile|
         event_profile.get_current_event_message
       end 
       @event_profiles.each do |event_profile|
         event_profile.play_current_event_message 
       end
+      # TODO a setting for step time
+      sleep 0.5
     end 
   end
 

@@ -32,7 +32,8 @@ class EventProfile < ActiveRecord::Base
       @pd_connection
     else 
       begin
-        self.pd_connection = TCPSocket.open ip_address, port
+        self.pd_connection = UDPSocket.new
+        self.pd_connection.connect(ip_address, port)
       rescue => er
         puts er.message
         puts "Can not connect to #{ip_address}:#{port}"
@@ -44,12 +45,14 @@ class EventProfile < ActiveRecord::Base
     @pd_connection=value
   end 
 
-  def set_current_event_message
+  def get_current_event_message
     self.current_event_message = event_messages.unplayed.first
   end 
 
   def play_current_event_message
-    self.current_event_message.play(self.pd_connection)
+    if self.current_event_message
+      self.current_event_message.play(self.pd_connection)
+    end
   end 
 
   def has_note?(note_name)

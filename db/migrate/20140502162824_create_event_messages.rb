@@ -5,6 +5,7 @@ class CreateEventMessages < ActiveRecord::Migration
       t.integer :event_profile_id
       t.string :content
       t.boolean :played
+      t.string :display_message
 
       t.timestamps
     end
