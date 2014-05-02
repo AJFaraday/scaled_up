@@ -25,17 +25,31 @@ class EventProfile < ActiveRecord::Base
   end
 
   attr_accessor :pd_connection
+  attr_accessor :current_event_message
 
   def pd_connection
     if @pd_connection
       @pd_connection
     else 
-      self.pd_connection = TCPSocket.open ip_address, port
+      begin
+        self.pd_connection = TCPSocket.open ip_address, port
+      rescue => er
+        puts er.message
+        puts "Can not connect to #{ip_address}:#{port}"
+      end 
     end
   end
 
   def pd_connection=(value)
     @pd_connection=value
+  end 
+
+  def set_current_event_message
+    self.current_event_message = event_messages.unplayed.first
+  end 
+
+  def play_current_event_message
+    self.current_event_message.play(self.pd_connection)
   end 
 
   def has_note?(note_name)
