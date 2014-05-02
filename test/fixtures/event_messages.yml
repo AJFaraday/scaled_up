@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  event_profile_id: 1
+  content: MyString
+  played: false
+
+two:
+  event_id: 1
+  event_profile_id: 1
+  content: MyString
+  played: false
