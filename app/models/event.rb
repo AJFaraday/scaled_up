@@ -13,7 +13,6 @@ class Event < ActiveRecord::Base
       collect{|x|x.name}
     end
 
-
   end
   
   belongs_to :sample
@@ -24,9 +23,28 @@ class Event < ActiveRecord::Base
 
   after_initialize :init_event_profile
 
+  after_create :create_event_message
+
   def init_event_profile
     self.event_profile_id ||= EventProfile.first.id
   end 
+
+  def create_event_message
+    if self.notes.any?
+      @message = ""
+      self.notes.each do |note|
+        @message << "note #{note.midi_note};"
+      end
+    elsif self.sample
+      @message = "sample #{self.sample.name}"
+    end
+    EventMessage.create!(
+      event_id: self.id,
+      event_profile_id: self.event_profile_id,
+      played: false,
+      content: @message
+    )
+  end
 
   attr_accessor :midi_notes
   serialize :midi_notes, Array
@@ -51,6 +69,5 @@ class Event < ActiveRecord::Base
   def has_note?(note_name)
     notes.names.include?(note_name)
   end
-
 
 end

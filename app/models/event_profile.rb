@@ -18,6 +18,26 @@ class EventProfile < ActiveRecord::Base
   before_save :initialise_notes
   validates_uniqueness_of :name
 
+  has_many :event_messages do 
+    def unplayed
+      where(:played => false).order("id asc")
+    end
+  end
+
+  attr_accessor :pd_connection
+
+  def pd_connection
+    if @pd_connection
+      @pd_connection
+    else 
+      self.pd_connection = TCPSocket.open ip_address, port
+    end
+  end
+
+  def pd_connection=(value)
+    @pd_connection=value
+  end 
+
   def has_note?(note_name)
     notes.names.include?(note_name)
   end
