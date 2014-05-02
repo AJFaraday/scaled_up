@@ -5,7 +5,9 @@ class EventMessage < ActiveRecord::Base
 
   def play(pd_connection) 
     puts self.display_message
-    pd_connection.send("#{self.content};\n",0)
+    self.content.split(';').each do |part|
+      pd_connection.send("#{part};\n",0)
+    end 
     self.update_attribute :played, true
   end
 

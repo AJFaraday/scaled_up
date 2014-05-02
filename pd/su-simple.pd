@@ -1,0 +1,13 @@
+#N canvas 3 54 450 300 10;
+#X obj 28 62 netreceive 9901 1;
+#X obj 160 62 netreceive 9902 1;
+#X text 34 8 Scaled Up receiver MK2;
+#X text 34 22 Simple Sounds;
+#X obj 38 89 print bass;
+#X obj 171 90 print chord;
+#X obj 28 115 simple/bass;
+#X obj 160 114 simple/chord;
+#X connect 0 0 4 0;
+#X connect 0 0 6 0;
+#X connect 1 0 5 0;
+#X connect 1 0 7 0;

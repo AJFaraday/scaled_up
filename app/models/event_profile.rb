@@ -26,6 +26,7 @@ class EventProfile < ActiveRecord::Base
 
   attr_accessor :pd_connection
   attr_accessor :current_event_message
+  attr_accessor :steps_until_play
 
   def pd_connection
     if @pd_connection
@@ -46,11 +47,19 @@ class EventProfile < ActiveRecord::Base
   end 
 
   def get_current_event_message
-    self.current_event_message = event_messages.unplayed.first
+    self.steps_until_play ||= 0
+    if self.steps_until_play > 0
+      self.steps_until_play -= 1
+    else
+      self.current_event_message = event_messages.unplayed.first
+      if self.current_event_message
+        self.steps_until_play = current_event_message.length - 1
+      end 
+    end
   end 
 
   def play_current_event_message
-    if self.current_event_message
+    if self.current_event_message and !self.current_event_message.played?
       self.current_event_message.play(self.pd_connection)
     end
   end 

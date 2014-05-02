@@ -5,11 +5,13 @@
     init_form();
   });
 
+  <%# TODO run these from the systme settings wait_step_time, weight_steps %>
+
   $('#processing_message').hide();
   $('#waiting_message').show();
   $('#waiting_countdown').show();
   $('#waiting_countdown').html('3');
-
+ 
   setTimeout(function() {
     $('#waiting_countdown').html('2');
   },500);

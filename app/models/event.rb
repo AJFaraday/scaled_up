@@ -32,9 +32,10 @@ class Event < ActiveRecord::Base
 
   def create_event_message
     if self.notes.any?
+      @ms_length = (self.length * 110)
       @message = ""
       self.notes.each do |note|
-        @message << "note #{note.midi_note};"
+        @message << "note #{note.midi_note} #{@ms_length};"
       end
     elsif self.sample
       @message = "sample #{self.sample.name}"
@@ -44,6 +45,8 @@ class Event < ActiveRecord::Base
       event_profile_id: self.event_profile_id,
       played: false,
       content: @message,
+      # TODO replace 110 with this system setting
+      length: self.length,
       display_message: "#{self.source.ljust(20)} - #{self.event_profile.name.ljust(20)} - #{@message}"
     )
   end

@@ -1,0 +1,19 @@
+# TODO enact some of these as a model
+
+semiquaver_time:
+  type: integer
+  default: 110
+  name: "Semiquaver Time"
+  desc: "The number of milliseconds for each semiquaver of music"
+
+wait_steps:
+  type: integer
+  default: 3
+  name: "Wait steps"
+  desc: "After placing a note a count-down from this number will take place"
+
+wait_step_time:
+  type: integer
+  default: 500
+  name: "Wait Step Time"
+  desc: "Each number in the count down will take this many milliseconds"

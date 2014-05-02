@@ -24,10 +24,11 @@ namespace :player do
         event_profile.get_current_event_message
       end 
       @event_profiles.each do |event_profile|
+        
         event_profile.play_current_event_message 
       end
       # TODO a setting for step time
-      sleep 0.5
+      sleep 0.110
     end 
   end
 
