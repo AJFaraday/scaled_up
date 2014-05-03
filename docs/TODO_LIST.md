@@ -2,6 +2,8 @@
 
 This is a reference for things which have not yet been developed for Scaled Up^. They may, or may not, be added to the app in future.
 
+If you are reading this and you are not Andrew Faraday, items on this list could be your contribution to Scaled Up^
+
 * Sequence events: Users select X notes and they are played back in this order.
 * Length options: Should be specific to each Order Profile
 * Length UI: Should be a clickable picture of the note value
