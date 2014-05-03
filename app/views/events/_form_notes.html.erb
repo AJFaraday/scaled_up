@@ -1,5 +1,5 @@
     <% if @event_profile.notes.any? %>
-      <div id='midi_fields'>
+      <div id='midi_fields' style='display:none;'>
         <% @event.midi_notes.each_with_index do |midi_note,index| %>
           <input type='hidden' 
                  name="event[midi_notes][<%=index%>]"
@@ -7,6 +7,7 @@
         <% end %>
       </div>
 
+      Select <%= @event_profile.no_of_notes %> <%= Note.model_name.human(count: @event_profile.no_of_notes) %> 
       <div class='notes_field'>
         <% @event.octaves.each do |octave| %>
           <%= render 'octave_field', octave: octave %>
