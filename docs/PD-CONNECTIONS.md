@@ -18,7 +18,7 @@ There is a hope that the Pure Data patch could be expanded or substitued for a d
 This is the current guide:
 
 |Range       | Name         | Description                                     |
-------------------------------------------------------------------------------
+|------------|--------------|-------------------------------------------------|
 |9900 - 9909 | Bass         | Monophonic synth, sounds good at lower pitches. | 
 |9910 - 9919 | Treble       | Monophonic synth, sounds good at higher pitches.|
 |9920 - 9929 | Chord        | Synths designed to handle multiple voices.      |

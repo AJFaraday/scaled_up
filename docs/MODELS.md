@@ -12,7 +12,7 @@ Note: They are currently only created via db/seed.rb
 ### Attributes
 
 |Attribute | Description |
---------------------------
+|----------|-------------|
 |Name| A display name to identify profile. Used in Event form. |
 |no_of_notes| Number of notes to be played simultaneosly |
 | min_note | Lowest midi note possible. Used for generating event form |
