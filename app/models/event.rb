@@ -34,8 +34,10 @@ class Event < ActiveRecord::Base
     if self.notes.any?
       @ms_length = (self.length * 110)
       @message = ""
+      @display_message = ""
       self.notes.each do |note|
         @message << "note #{note.midi_note} #{@ms_length};"
+        @display_message << "note #{note.name} #{self.length}"
       end
     elsif self.sample
       @message = "sample #{self.sample.name}"
@@ -47,7 +49,7 @@ class Event < ActiveRecord::Base
       content: @message,
       # TODO replace 110 with this system setting
       length: self.length,
-      display_message: "#{self.source.ljust(20)} - #{self.event_profile.name.ljust(20)} - #{@message}"
+      display_message: "#{self.source.ljust(20)} - #{self.event_profile.name.ljust(20)} - #{@display_message}"
     )
   end
 

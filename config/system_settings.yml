@@ -1,4 +1,4 @@
-# TODO enact some of these as a model
+# TODO enact these in the app, possibly implement UI with name and desc
 
 semiquaver_time:
   type: integer

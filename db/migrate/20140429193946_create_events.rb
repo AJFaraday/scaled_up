@@ -5,7 +5,6 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :length
       t.integer :sample_id
       t.integer :event_profile_id
-      t.boolean :played
 
       t.timestamps
     end
