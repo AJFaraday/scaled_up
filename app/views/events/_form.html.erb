@@ -16,8 +16,8 @@
     </p>
 
     <p>
-      <%= f.label :length %>
-      <%= f.select :length, Event.length_options %>
+      <%= f.label :length_id %>
+      <%= f.select :length_id, @event.length_options %>
     </p>
 
     <%= render :partial => 'form_notes' %>

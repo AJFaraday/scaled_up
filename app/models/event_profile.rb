@@ -3,6 +3,8 @@ class EventProfile < ActiveRecord::Base
   belongs_to :sample_group
   has_many :samples, through: :sample_group
 
+  has_and_belongs_to_many :lengths
+
   has_many :events
   has_and_belongs_to_many :notes do 
     
@@ -55,7 +57,7 @@ class EventProfile < ActiveRecord::Base
     else
       self.current_event_message = event_messages.unplayed.first
       if self.current_event_message
-        self.steps_until_play = current_event_message.length - 1
+        self.steps_until_play = current_event_message.steps - 1
       end 
     end
   end 
@@ -92,6 +94,13 @@ class EventProfile < ActiveRecord::Base
     self.notes = Note.where(:midi_note => value).all
   end
 
+  def length_steps
+    self.lengths.collect{|x|x.steps}
+  end 
+
+  def length_steps=(value=[])
+    self.lengths = Length.where(:steps => value).all
+  end
 
   #
   # returns a sorted arraty of midi octaves for the related notes 

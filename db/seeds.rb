@@ -12,8 +12,6 @@ sample_groups = {
     Tom2: 'tom2',
     Top3: 'tom3',
     Cymbal: 'cymbal'
-    #Ride: 'ride',
-    #Crash: 'crash'
   },
   Noises: {
     Beep: 'beep',
@@ -25,12 +23,22 @@ sample_groups = {
 }
 SampleGroup.create_from_hash(sample_groups)
 
+unless Length.count > 0
+  Length.create!(name: 'Quaver', steps: 1, image: 'quaver.png')
+  Length.create!(name: 'Crotchet', steps: 2, image: 'crotchet.png')
+  Length.create!(name: 'Dotted Crotchet', steps: 3, image: 'dotted-crotchet.png')
+  Length.create!(name: 'minim', steps: 4, image: 'minim.png')
+  Length.create!(name: 'semibreve', steps: 8, image: 'semibreve.png')
+end
+
+
 unless EventProfile.find_by_name('Chromatic Bass')
   EventProfile.create({
     name: 'Chromatic Bass',
     no_of_notes: 1, 
     min_note: 36,
     max_note: 60,
+    length_steps: [1,2,3,4,8],
     ip_address: '127.0.0.1',
     port: 9900
   })
@@ -43,6 +51,7 @@ unless EventProfile.find_by_name('Pentatonic Bass')
     min_note: 36,
     max_note: 60,
     midi_notes: [36,39,41,43,46,48,51,53,55,58,60],
+    length_steps: [1,2,3,4,8],
     ip_address: '127.0.0.1',
     port: 9901
   })
@@ -54,6 +63,7 @@ unless EventProfile.find_by_name('Three Notes')
     no_of_notes: 3,
     min_note: 60,
     max_note: 79,
+    length_steps: [4,8],
     ip_address: '127.0.0.1',
     port: 9920
   })
@@ -63,7 +73,14 @@ unless EventProfile.find_by_name('Drum Kit')
   EventProfile.create({
     name: 'Drum Kit',
     sample_group_id: SampleGroup.find_by_name('Drums').id,
+    length_steps: [1,2,4],
     ip_address: '127.0.0.1',
     port: 9930
   })
 end
+
+
+
+
+
+

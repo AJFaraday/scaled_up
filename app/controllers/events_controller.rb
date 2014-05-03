@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
   def get_event
     if params[:event]
-      event_params = params.require(:event).permit(:source,:event_profile_id,:length,:sample_id)
+      event_params = params.require(:event).permit(:source,:event_profile_id,:length_id,:sample_id)
       @event = Event.new(event_params)
       @event.midi_notes = params[:event][:midi_notes].collect{|x,y|y} if params[:event][:midi_notes]
       session[:source_name] = @event.source

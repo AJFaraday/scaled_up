@@ -14,6 +14,8 @@ class Event < ActiveRecord::Base
     end
 
   end
+
+  belongs_to :length
   
   belongs_to :sample
 
@@ -32,14 +34,14 @@ class Event < ActiveRecord::Base
 
   def create_event_message
     if self.notes.any?
-      @ms_length = (self.length * 110)
+      @ms_length = (self.steps * 110) # TODO get this from system settings
       @message = ""
       @display_message = "#{Note.model_name.human(count: notes.count)} "
       self.notes.each do |note|
         @message << "note #{note.midi_note} #{@ms_length};"
         @display_message << "#{note.name} "
       end
-      @display_message << " #{self.length}" 
+      @display_message << " #{self.length.name}"
     elsif self.sample
       @display_message = @message = "sample #{self.sample.name}"
     end
@@ -49,7 +51,7 @@ class Event < ActiveRecord::Base
       played: false,
       content: @message,
       # TODO replace 110 with this system setting
-      length: self.length,
+      steps: self.steps,
       display_message: "#{self.source.ljust(20)} - #{self.event_profile.name.ljust(20)} - #{@display_message}"
     )
   end
@@ -65,13 +67,13 @@ class Event < ActiveRecord::Base
     self.notes = Note.where(:midi_note => value).all
   end
 
+  def length_options
+    self.event_profile.lengths.collect{|x|[x.name,x.id]}
+  end
 
-  def Event.length_options
-    [
-      ['Crotchet',2],
-      ['Quaver', 1],
-      ['Semibreve', 4]
-    ]
+  def length_id=(value)
+    super(value)
+    self.steps = self.length.steps
   end
 
   def has_note?(note_name)

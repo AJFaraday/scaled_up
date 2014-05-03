@@ -106,7 +106,7 @@ This is primarily focussed on interface with the user, not setup or interface wi
 |Attribute | Description |
 |----------|-------------|
 |source    | The name of the user making this event, mostly required for interest. In demos users will see their name on the readout |
-| length   | Amount of steps which this event will take place for, this causes the player to pause this event profile for that many steps and makes the synth make a note for this amount of time |
+| steps    | Amount of steps which this event will take place for, this causes the player to pause this event profile for that many steps and makes the synth make a note for this amount of time |
 
 ### Relations
 
@@ -129,7 +129,7 @@ The formatted message to be played by pure data. This is the table polled by the
 | content  | Formatted message to be passed to sequencer |
 | played   | a boolean which is set to true when the player plays this message | 
 | display_message | A formatted message to be output to the console allowing users to see what is happening and who asked for it. |
-| length | From the event, the number of steps this event will take |
+| steps    | From the event, the number of steps this event will take |
 
 
 ### Relations
