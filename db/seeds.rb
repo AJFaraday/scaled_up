@@ -32,7 +32,7 @@ unless EventProfile.find_by_name('Chromatic Bass')
     min_note: 36,
     max_note: 60,
     ip_address: '127.0.0.1',
-    port: 9901
+    port: 9900
   })
 end
 
@@ -44,7 +44,7 @@ unless EventProfile.find_by_name('Pentatonic Bass')
     max_note: 60,
     midi_notes: [36,39,41,43,46,48,51,53,55,58,60],
     ip_address: '127.0.0.1',
-    port: 9902
+    port: 9901
   })
 end
 
@@ -55,7 +55,7 @@ unless EventProfile.find_by_name('Three Notes')
     min_note: 60,
     max_note: 78,
     ip_address: '127.0.0.1',
-    port: 9910
+    port: 9920
   })
 end
 
