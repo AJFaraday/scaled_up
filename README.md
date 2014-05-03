@@ -25,7 +25,7 @@ Basically, it is a web interface for multiple people to send control input to th
 * (Modify config/database.yml if required)
 * `rake db:setup`
 
-# Operation
+# Getting Started
 
 (from the root directory of Scaled Up^)
 
