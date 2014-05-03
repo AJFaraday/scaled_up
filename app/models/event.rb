@@ -34,13 +34,14 @@ class Event < ActiveRecord::Base
     if self.notes.any?
       @ms_length = (self.length * 110)
       @message = ""
-      @display_message = ""
+      @display_message = "#{Note.model_name.human(count: notes.count)} "
       self.notes.each do |note|
         @message << "note #{note.midi_note} #{@ms_length};"
-        @display_message << "note #{note.name} #{self.length}"
+        @display_message << "#{note.name} "
       end
+      @display_message << " #{self.length}" 
     elsif self.sample
-      @message = "sample #{self.sample.name}"
+      @display_message = @message = "sample #{self.sample.name}"
     end
     EventMessage.create!(
       event_id: self.id,
