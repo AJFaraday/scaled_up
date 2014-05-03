@@ -1,9 +1,12 @@
-#N canvas 95 172 450 300 10;
+#N canvas 95 173 648 300 10;
 #X text 12 8 Scaled Up receiver \, mk1;
 #X obj 18 52 netreceive 9901 1;
 #X text 12 22 Diagnostic only;
 #X obj 18 79 print 9901;
-#X obj 151 80 print 9902;
-#X obj 151 53 netreceive 9902 1;
+#X obj 128 79 print 9902;
+#X obj 128 52 netreceive 9902 1;
+#X obj 238 79 print 9902;
+#X obj 238 52 netreceive 9910 1;
 #X connect 1 0 3 0;
 #X connect 5 0 4 0;
+#X connect 7 0 6 0;
