@@ -1,4 +1,5 @@
 # Scaled Up^
+## By Andrew Faraday
 
 A social experiment in collaborative musicianship.
 
@@ -30,9 +31,18 @@ Basically, it is a web interface for multiple people to send control input to th
 (from the root directory of Scaled Up^)
 
 * `rails s`
-* Open Pure Data and open any file from pd beginning with su- and ending with .pd:
-** su-diagnostic.pd: This will make no sound, just show incoming signals from the player.
-** su-simple.pd: A simple set of sounds, the first attempt at making sounds with pd.
+* Open Pure Data and open any file from pd beginning with su- and ending with .pd
 * `rake player:play`
 
+Options for PD patches:
 
+* su-diagnostic.pd: This will make no sound, just show incoming signals from the player.
+* su-simple.pd: A simple set of sounds, the first attempt at making sounds with pd.
+
+# Contributing
+
+If you know any Ruby, CSS, jQuery or Pure Data, you can help. Fork the repo first, make your changes and send a pull request. 
+
+Technical details about the app are in the docs/ directory. 
+
+I would also like to hear if you've tried Scaled Up^, how you found it, problems you had with it. Get in touch with @MarmiteJunction on Twitter to have a chat.
