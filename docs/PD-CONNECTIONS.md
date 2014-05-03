@@ -18,9 +18,12 @@ There is a hope that the Pure Data patch could be expanded or substitued for a d
 This is the current guide:
 
 |Range       | Name         | Description                                     |
+------------------------------------------------------------------------------
 |9900 - 9909 | Bass         | Monophonic synth, sounds good at lower pitches. | 
 |9910 - 9919 | Treble       | Monophonic synth, sounds good at higher pitches.|
 |9920 - 9929 | Chord        | Synths designed to handle multiple voices.      |
 |9930 - 9939 | Samples      | Accepts sample names, used for drums or other sounds. Samples ususally stored in /pd/*theme name*/audio/*.wav |
 
-Pure data patches do not necessarily respond to all ports within ranges. But should respond at least to the ports ending in zero.
+Pure Data patches do not necessarily respond to all ports within ranges. But should respond at least to the ports ending in zero.
+
+Check on the root window of the pure data patch, where you will probably see a [netreceive] object for each open port.
