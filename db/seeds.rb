@@ -8,17 +8,18 @@ sample_groups = {
     Kick: 'kick', 
     Snare: 'snare',
     "HiHat" => 'hat',
-    Crash: 'crash',
-    Ride: 'ride',
     Tom1: 'tom1',
     Tom2: 'tom2',
-    Top3: 'tom3'
+    Top3: 'tom3',
+    Ride: 'ride',
+    Crash: 'crash'
   },
   Noises: {
     Beep: 'beep',
     Boop: 'boop',
     Hiss: 'hiss',
-    Clatter: 'clatter'
+    Clatter: 'clatter',
+    Bang: 'bang'
   }
 }
 SampleGroup.create_from_hash(sample_groups)
@@ -50,10 +51,18 @@ unless EventProfile.find_by_name('Three Notes')
   EventProfile.create({
     name: 'Three Notes',
     no_of_notes: 3,
-    min_note: 48,
-    max_note: 59,
+    min_note: 60,
+    max_note: 78,
     ip_address: '127.0.0.1',
     port: 9902
   })
 end
 
+unless EventProfile.find_by_name('Drum Kit')
+  EventProfile.create({
+    name: 'Drum Kit',
+    sample_group_id: SampleGroup.find_by_name('Drums').id,
+    ip_address: '127.0.0.1',
+    port: 9910
+  })
+end

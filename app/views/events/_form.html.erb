@@ -20,20 +20,8 @@
       <%= f.select :length, Event.length_options %>
     </p>
 
-    <div id='midi_fields'>
-      <% @event.midi_notes.each_with_index do |midi_note,index| %>
-        <input type='hidden' 
-               name="event[midi_notes][<%=index%>]"
-               value="<%= midi_note %>" />
-      <% end %>
-    </div>
+    <%= render :partial => 'form_notes' %>
 
-    <div class='notes_field'>
-      <% @event.octaves.each do |octave| %>
-        <%= render 'octave_field', octave: octave %>
-      <% end %>
-    </div>
- 
-  </div>
+    <%= render :partial => 'form_samples', :locals => {:f => f} %>
 
 <% end %>

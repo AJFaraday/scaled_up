@@ -1,0 +1,11 @@
+<% if @event_profile.sample_group %>
+  <%= f.hidden_field :sample_id %>
+  <div class='sample_button_holder'>
+    <% @event_profile.samples.each do |sample| %>
+      <div class='sample_button' 
+           data-value='<%= sample.id %>'>  
+        <%= sample.display_name %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

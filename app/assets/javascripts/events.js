@@ -37,6 +37,25 @@ function init_keyboard() {
   });
 }
 
+function init_samples() {
+  $('.sample_button').on('click', function() {
+    var sample_id = $(this).data('value');
+    $('#event_sample_id').val(sample_id);
+
+    $('#waiting_modal').modal('show');
+    $('#processing_message').show();
+    $('#waiting_message').hide();
+    $('#waiting_countdown').hide();
+
+    $.ajax({
+      url: '/events',
+      type: 'POST',
+      data: $('#new_event').serialize(),
+      dataType: 'script'
+    });
+  }); 
+}
+
 function submit_if_complete() {
   var req_notes = parseInt($('#note_requirement').val(),10);
   if ($('#midi_fields :input').length >= req_notes) {
@@ -87,6 +106,7 @@ $(document).ready(function(){
 
   init_keyboard();
   init_form();
+  init_samples();
 
 });
 

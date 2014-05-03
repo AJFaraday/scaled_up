@@ -11,8 +11,36 @@ $black_note_inactive: #555555 ;
 $keyboard_back: #4656EB ;
 $key_offset: 40px;
 
+$sample_button_background: #44ff66;
+$sample_button_text:#000000; 
+$sample_button_holder: #22dd44 ;
+
 .massive {
   font-size: 200px;
+}
+
+
+.sample_button_holder {
+  position:relative;
+  float:left;
+  background-color:$sample_button_holder;
+  padding: 2px;  
+}
+
+.sample_button_holder{
+
+  .sample_button {
+    background-color: $sample_button_background;
+    color: $sample_button_text;
+    position:relative;
+    float: left; 
+    height: 50px;
+    min-width: 100px;
+    text-align: center;
+    border: 2px solid black;
+    padding-top: 13px;
+    margin: 2px;
+  }
 }
 
 .octave {
