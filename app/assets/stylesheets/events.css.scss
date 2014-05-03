@@ -12,8 +12,10 @@ $keyboard_back: #4656EB ;
 $key_offset: 40px;
 
 $sample_button_background: #44ff66;
+$sample_button_hover: #66ff88;
 $sample_button_text:#000000; 
 $sample_button_holder: #22dd44 ;
+
 
 .massive {
   font-size: 200px;
@@ -40,6 +42,10 @@ $sample_button_holder: #22dd44 ;
     border: 2px solid black;
     padding-top: 13px;
     margin: 2px;
+  
+    &:hover{
+      background-color: $sample_button_hover;
+    }
   }
 }
 
