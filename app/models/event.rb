@@ -68,8 +68,8 @@ class Event < ActiveRecord::Base
 
   def Event.length_options
     [
-      ['Crotchet',1],
-      ['Quaver', 2],
+      ['Crotchet',2],
+      ['Quaver', 1],
       ['Semibreve', 4]
     ]
   end
