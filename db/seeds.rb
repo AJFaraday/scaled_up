@@ -53,7 +53,7 @@ unless EventProfile.find_by_name('Three Notes')
     name: 'Three Notes',
     no_of_notes: 3,
     min_note: 60,
-    max_note: 78,
+    max_note: 79,
     ip_address: '127.0.0.1',
     port: 9920
   })
