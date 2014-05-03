@@ -11,8 +11,9 @@ sample_groups = {
     Tom1: 'tom1',
     Tom2: 'tom2',
     Top3: 'tom3',
-    Ride: 'ride',
-    Crash: 'crash'
+    Cymbal: 'cymbal'
+    #Ride: 'ride',
+    #Crash: 'crash'
   },
   Noises: {
     Beep: 'beep',
