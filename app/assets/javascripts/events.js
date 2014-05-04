@@ -84,6 +84,8 @@ function init_form(){
   });
   show_form_if_source();
   init_modal();
+  init_keyboard();
+  init_samples();
 }
 
 function show_form_if_source(){
@@ -103,11 +105,11 @@ function renew_form() {
 }
 
 $(document).ready(function(){
-
-  init_keyboard();
   init_form();
-  init_samples();
+});
 
+$(document).on('page:load',function() {
+  init_form();
 });
 
 function init_modal() {
