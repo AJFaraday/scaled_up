@@ -1,0 +1,24 @@
+<h1><%= SystemSetting.model_name.human(count: 2) %></h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= SystemSetting.human_attribute_name(:name) %></th>
+      <th><%= SystemSetting.human_attribute_name(:display_name) %></th>
+      <th><%= SystemSetting.human_attribute_name(:description) %></th>
+      <th><%= SystemSetting.human_attribute_name(:default) %></th>
+      <th><%= SystemSetting.human_attribute_name(:value) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @system_settings.each do |system_setting| %>
+      <tr>
+        <td><%= system_setting.name %></td>
+        <td><%= system_setting.display_name %></td>
+        <td><%= system_setting.description %></td>
+        <td><%= system_setting.default %></td>
+        <td><%= system_setting.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

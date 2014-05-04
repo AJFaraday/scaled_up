@@ -1,0 +1,31 @@
+<h1><%= SystemSetting.model_name.human(count: 2) %></h1>
+
+
+<%= form_tag(
+      {
+        controller: 'system_settings',
+        action: 'update'
+      },
+      method: 'PATCH'
+    ) do %>
+
+  <table class='table'>
+    <tbody>
+      <% @system_settings.each do |system_setting| %>
+        <tr>
+          <td><b><%= system_setting.display_name %></b></td>
+          <td><%= text_field_tag system_setting.name, system_setting.value %></td>
+          <td><%= system_setting.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td><%= submit_tag("Update Settings") %></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+<% end %>
