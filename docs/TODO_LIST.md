@@ -6,8 +6,6 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 
 * Sequence events: Users select X notes and they are played back in this order.
 * Some kind of sequence where the user input is a change to one step in the event. 
-* Length options: Should be specific to each Order Profile
-* Length UI: Should be a clickable picture of the note value
 * A "conductor" page, only accessible to localhost, which allows the user to activate or deactivate event profiles.
 * Write a helper for keyboard component and length select, to use in both event and event profile interface.
 * UI to modify event profiles, note options, build sample groups etc.
