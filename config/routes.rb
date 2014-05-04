@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
   root "events#new"
-  resource :events do 
+  resources :events do 
     collection do
       post :renew_form
     end
+  end
+  
+  resources :system_settings, except: [:edit, :update] do
+    get :edit, on: :collection
+    patch :update, on: :collection
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
