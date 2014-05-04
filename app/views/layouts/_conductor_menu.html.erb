@@ -1,19 +1,11 @@
 <% if local_request? %>
   <div class='btn-group btn-group-vertical'>
-    <button class='btn' type='button'>
-      <%= link_to(t('home'), root_path) %>
-    </button>
-    <button class='btn' type='button'>
-      <%= link_to(
-            SystemSetting.model_name.human(count: 2),
-            system_settings_path
-          ) %>
-    </button>
-    <button class='btn' type='button'>
-      <%= link_to(
-        "Edit #{SystemSetting.model_name.human(count: 2)}",
-        edit_system_settings_path
-      ) %>
-    </button>
+    <%= link_to t('.home'), root_path, class: 'btn btn-default' %>
+    <%= link_to SystemSetting.model_name.human(count: 2),
+                system_settings_path,
+                class: 'btn btn-default' %>
+    <%= link_to "Edit #{SystemSetting.model_name.human(count: 2)}",
+                edit_system_settings_path,
+                class: 'btn btn-default' %>
   </div>
 <% end %>
