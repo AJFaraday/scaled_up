@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      note:
+        one: Note
+        other: Notes
+    attributes:
+      id: ID
+      name: Name
+      midi_note: MIDI Note

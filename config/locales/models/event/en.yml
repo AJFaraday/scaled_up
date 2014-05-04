@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      event:
+        one: Event
+        other: Events
+    attributes:
+      event:
+        id: ID
+        source: Your Name
+        steps: Steps
+        sample_id: Sample
+        event_profile_id: Event Profile
+        length_id: Length
+        
+
