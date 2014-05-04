@@ -1,5 +1,22 @@
 # Models
 
+## SystemSetting
+
+System settings are settings which change the operation of the app in some way. 
+
+They are initially defined in config/system_settings.yml and created in db/seeds.rb
+
+### Attributes
+
+|Attribute | Description |
+|----------|-------------|
+| name     | the internally used name of this setting |
+|display_name| The name for this setting which is shown to the user |
+| description | a brief description of what this setting does | 
+| default  | The initial value of this setting on intialising the database |
+| value | The current value of this attribute, it may have been changed since database creation| 
+| value_class | the class of ruby object this value should be. Options "integer", "float", "string" | 
+
 
 ## EventProfile
 
@@ -28,8 +45,9 @@ Note: They are currently only created via db/seed.rb
 | SampleGroup| belongs_to | If one is defined samples in that group are shown in the new event form |
 | Sample    | has_many (through SampleGroup | Samples which appear on new event form |
 | Event     | has_many | Created from Event Profile, and event is sent via a profile | 
-| Notes     | has_and_belongs_to_many | A list of note options for this profile, used to generate event form | 
-
+| Note      | has_and_belongs_to_many | A list of note options for this profile, used to generate event form | 
+| Length    | has_and_belongs_to_many | These are the options for the length of an event, used to generate event form |
+| Length    | belongs_to (default_length)| The default length for events created from this profile |
 
 ## SampleGroup 
 
@@ -74,6 +92,30 @@ Names of samples here should have an eqivalent auido file for Pure Data to read.
 |Event      |has_many  | Events which are this sample, this sample record is used to create an event message | 
 
 
+## Length
+
+A potential length for an event, described as musical note values. Includes a reference to an image of that length. 
+
+Because the app currently uses steps of a quaver, this can not support smaller note values than that. To change this minimum change quaver to semiquaver across the app, change the seeds for length, and shorten the step time in /config/system_settings.yml
+
+Currently (and only ever) created via db/seeds.rb
+
+### Attributes
+
+|Attribute | Description |
+|----------|-------------|
+| name     | The actual name of this note value |
+| steps    | The number of steps (quavers) in this length |
+| image    | The file name of an image of this note value (e.g. 'crotchet.png')
+
+### Relations
+
+|   Model   |   Type   | Purpose                         |
+|-----------|----------|---------------------------------|
+| Event     | has_many | That event is this length       |
+| EventProfile| has_and_belongs_to_many | This is one of the options for events with that profile | 
+| EventProfile| has_many (default_length) (not implemented) | This is the default length for that event profile, but the length does not need to know that, so this relation is not in the model. |  
+
 ## Note
 
 A static lookup of note names against midi notes (standard reference for absolute pitches in western music, used for a lot of music technology). 
@@ -116,7 +158,7 @@ This is primarily focussed on interface with the user, not setup or interface wi
 |EventMessage|has_one| This holds the correctly formatted message for Pure Data and is directly connected to the Event Profile. This is the table actually polled to play this event. |
 | Note      | has_and_belongs_to_many| The midi notes which will be produced when this event is played, simultaneously or consecutively (not yet implemented) |
 | Sample | belongs_to | The sample which will be sounded when this event is played |
-
+| Length | belongs_to | The length of this event, used as a lookup for steps |
 
 ## EventMessage
 
