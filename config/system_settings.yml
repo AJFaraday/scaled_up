@@ -1,19 +1,17 @@
-# TODO enact these in the app, possibly implement UI with name and desc
-
-semiquaver_time:
-  type: integer
+quaver_time:
+  value_class: integer
   default: 110
-  name: "Semiquaver Time"
-  desc: "The number of milliseconds for each semiquaver of music"
+  display_name: "Quaver Time"
+  description: "The number of milliseconds for each quaver of music"
 
 wait_steps:
-  type: integer
+  value_class: integer
   default: 3
-  name: "Wait steps"
-  desc: "After placing a note a count-down from this number will take place"
+  display_name: "Wait steps"
+  description: "After placing a note a count-down from this number will take place"
 
 wait_step_time:
-  type: integer
+  value_class: integer
   default: 500
-  name: "Wait Step Time"
-  desc: "Each number in the count down will take this many milliseconds"
+  display_name: "Wait Step Time"
+  description: "Each number in the count down will take this many milliseconds"

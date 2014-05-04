@@ -1,6 +1,10 @@
 # Generate notes (midi notes 21 - 108)
 Note.create_initial
 
+# SystemSettings created from config/system_settings.yml
+
+SystemSetting.create_from_config
+
 # Create Sample Groups
 
 sample_groups = {
