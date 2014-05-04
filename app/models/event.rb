@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
 
   def create_event_message
     if self.notes.any?
-      @ms_length = (self.steps * 110) # TODO get this from system settings
+      @ms_length = (self.steps * SystemSetting.get('quaver_time'))
       @message = ""
       @display_message = "#{Note.model_name.human(count: notes.count)} "
       self.notes.each do |note|
@@ -50,7 +50,6 @@ class Event < ActiveRecord::Base
       event_profile_id: self.event_profile_id,
       played: false,
       content: @message,
-      # TODO replace 110 with this system setting
       steps: self.steps,
       display_message: "#{self.source.ljust(20)} - #{self.event_profile.name.ljust(20)} - #{@display_message}"
     )

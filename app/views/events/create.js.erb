@@ -6,25 +6,28 @@
     init_samples();
   });
 
-  <%# TODO run these from the systme settings wait_step_time, weight_steps %>
+  <% 
+     wait_steps = SystemSetting.get('wait_steps') 
+     wait_step_time = SystemSetting.get('wait_step_time')
+     current_step = 0
+  %>
 
   $('#processing_message').hide();
   $('#waiting_message').show();
   $('#waiting_countdown').show();
-  $('#waiting_countdown').html('3');
+  $('#waiting_countdown').html('<%= wait_steps %>');
  
-  setTimeout(function() {
-    $('#waiting_countdown').html('2');
-  },500);
-
-  setTimeout(function() {
-    $('#waiting_countdown').html('1');
-  },1000);
-
+  <% until current_step == wait_steps %>
+    setTimeout(function() {
+      $('#waiting_countdown').html('<%= wait_steps - current_step %>');
+    },
+    <%= current_step * wait_step_time %>);
+    <% current_step += 1 %>
+  <% end %>
 
   setTimeout(function() {
     $('#waiting_modal').modal('hide');
-  },1500);
+  },<%= wait_steps * wait_step_time %>);
 <% else %>
   alert("Event didn't save!!!");
 <% end %> 
