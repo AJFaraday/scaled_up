@@ -26,7 +26,7 @@ class SystemSettingsController < ApplicationController
         setting.update_attribute(:value, setting_param)
       end
     end 
-    flash[:success] = "The populated settings were updated, this will take effect immeditately."
+    flash[:success] = "The populated settings were updated."
     redirect_to edit_system_settings_path
   end 
 
