@@ -39,6 +39,7 @@ unless EventProfile.find_by_name('Chromatic Bass')
     min_note: 36,
     max_note: 60,
     length_steps: [1,2,3,4,8],
+    default_length_steps: 2,
     ip_address: '127.0.0.1',
     port: 9900
   })
@@ -52,6 +53,7 @@ unless EventProfile.find_by_name('Pentatonic Bass')
     max_note: 60,
     midi_notes: [36,39,41,43,46,48,51,53,55,58,60],
     length_steps: [1,2,3,4,8],
+    default_length_steps: 2, 
     ip_address: '127.0.0.1',
     port: 9901
   })
@@ -64,6 +66,7 @@ unless EventProfile.find_by_name('Three Notes')
     min_note: 60,
     max_note: 79,
     length_steps: [4,8],
+    default_length_steps: 8,
     ip_address: '127.0.0.1',
     port: 9920
   })
@@ -74,6 +77,7 @@ unless EventProfile.find_by_name('Drum Kit')
     name: 'Drum Kit',
     sample_group_id: SampleGroup.find_by_name('Drums').id,
     length_steps: [1,2,4],
+    default_length_steps: 2,
     ip_address: '127.0.0.1',
     port: 9930
   })

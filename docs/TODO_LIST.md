@@ -9,6 +9,7 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * Length options: Should be specific to each Order Profile
 * Length UI: Should be a clickable picture of the note value
 * A "conductor" page, only accessible to localhost, which allows the user to activate or deactivate event profiles.
+* Write a helper for keyboard component and length select, to use in both event and event profile interface.
 * UI to modify event profiles, note options, build sample groups etc.
 * UI to show queued events.
 * UI to show the sequence which has been played (not sure about this)

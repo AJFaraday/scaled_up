@@ -21,6 +21,10 @@ $sample_button_holder: #22dd44 ;
   font-size: 200px;
 }
 
+.length_image {
+  // Be aware that this height will re-scale images
+  height: 40px;
+}
 
 .sample_button_holder {
   position:relative;

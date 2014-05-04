@@ -73,7 +73,12 @@ class Event < ActiveRecord::Base
 
   def length_id=(value)
     super(value)
-    self.steps = self.length.steps
+    self.steps = self.length.steps 
+  end
+
+  def event_profile_id=(value)
+    super(value)
+    self.length_id = self.event_profile.default_length_id
   end
 
   def has_note?(note_name)

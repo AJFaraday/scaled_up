@@ -4,6 +4,9 @@ class EventProfile < ActiveRecord::Base
   has_many :samples, through: :sample_group
 
   has_and_belongs_to_many :lengths
+  belongs_to :default_length, 
+             class_name: 'Length',
+             foreign_key: :default_length_id
 
   has_many :events
   has_and_belongs_to_many :notes do 
@@ -100,6 +103,14 @@ class EventProfile < ActiveRecord::Base
 
   def length_steps=(value=[])
     self.lengths = Length.where(:steps => value).all
+  end
+
+  def default_length_steps
+    self.default_length.steps
+  end
+
+  def default_length_steps=(value)
+    self.default_length_id= Length.find_by_steps(value).id
   end
 
   #

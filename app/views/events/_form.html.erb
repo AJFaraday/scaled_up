@@ -15,10 +15,20 @@
       <%= f.select :event_profile_id, EventProfile.select_options %>
     </p>
 
-    <p>
-      <%= f.label :length_id %>
-      <%= f.select :length_id, @event.length_options %>
-    </p>
+    <div class="btn-group" data-toggle="buttons">
+      <% @event_profile.lengths.each do |length| %>
+        <label class="btn btn-primary <%= "active" if length.id == @event_profile.default_length_id %>">
+          <input type="radio" name='event[length_id]' value='<%= length.id %>'>
+            <%= image_tag "/assets/notes/#{length.image}", 
+                          alt: length.name,
+                          title: length.name,
+                          class: 'length_image' %>
+          </input>
+        </label>
+      <% end %>
+    </div>
+
+    <br/>
 
     <%= render :partial => 'form_notes' %>
 
