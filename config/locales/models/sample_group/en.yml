@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models: 
+      sample_group:
+        one: Sample Group
+        other: Sample Groups
+    attributes:
+      name: Name

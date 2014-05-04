@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models: 
+      sample: 
+        one: Sample
+        other: Samples
+    attributes:
+      id: ID
+      name: Name
+      display_name: Display Name
+      sample_group_id: Sample Group
+

@@ -1,0 +1,17 @@
+en:
+  activerecord: 
+    models: 
+      event_profile:
+        one: Event Profile
+        Other: Event Profiles
+    attributes:
+      id: ID
+      name: Name
+      no_of_notes: Number of Notes
+      sample_group_id: Sample Group
+      min_note: Lowest MIDI Note
+      max_note: Highest MIDI Note
+      lengths: Note Lengths
+      default_lenght_id: Default Note Length
+      ip_address: IP Address
+      port: Port

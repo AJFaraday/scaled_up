@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    models: 
+      system_setting:
+        one: System Setting
+        other: System settings
+    attributes:
+      name: Name
+      display_name: Display Name
+      description: Description
+      default: Default Value
+      value: Value
+      value_class: Type

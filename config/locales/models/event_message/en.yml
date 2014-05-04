@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models: 
+      event_message:
+        one: Event Message
+        other: Event Messages
+    attributes: 
+      id: ID
+      event_id: Event
+      event_profile_id: Event Profile
+      content: Content
+      played: Played
+      display_message: Display Message
+      steps: Steps
