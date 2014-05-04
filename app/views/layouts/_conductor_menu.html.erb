@@ -1,6 +1,6 @@
 <% if local_request? %>
   <div class='btn-group btn-group-vertical'>
-    <%= link_to t('.home'), root_path, class: 'btn btn-default' %>
+    <%= link_to t('.new_event'), root_path, class: 'btn btn-default' %>
     <%= link_to SystemSetting.model_name.human(count: 2),
                 system_settings_path,
                 class: 'btn btn-default' %>

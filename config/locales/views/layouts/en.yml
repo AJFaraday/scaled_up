@@ -1,0 +1,8 @@
+en:
+  layouts:
+    application:
+      title: "Scaled Up^"
+    conductor_menu: 
+      home: Home 
+      new_event: New Event
+      
