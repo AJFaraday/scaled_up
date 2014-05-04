@@ -7,10 +7,11 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * Sequence events: Users select X notes and they are played back in this order.
 * Some kind of sequence where the user input is a change to one step in the event. 
 * A "conductor" page, only accessible to localhost, which allows the user to activate or deactivate event profiles.
-* Write a helper for keyboard component and length select, to use in both event and event profile interface.
+* Write a helper method for keyboard component for use in event and event profile UI.
+* Write a helper method for length select component, for use in event (single) and event profile (multiple) UI
 * UI to modify event profiles, note options, build sample groups etc.
 * UI to show queued events.
-* UI to show the sequence which has been played (not sure about this)
+* UI to show the sequence which has yet been played (not sure about this)
 * General styling improvement, make it look like an app instead of a word document.
 * Implement System Settings from config/system_setings.yml
 * Translations for all user-facing attributes, particularly source, which is meaningless and event profile, which I could use a better name for.
