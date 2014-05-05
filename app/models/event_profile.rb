@@ -3,6 +3,8 @@ class EventProfile < ActiveRecord::Base
   belongs_to :sample_group
   has_many :samples, through: :sample_group
 
+  delegate :name, to: :sample_group, allow_nil: true, prefix: 'sample_group'
+
   has_and_belongs_to_many :lengths
   belongs_to :default_length, 
              class_name: 'Length',
@@ -83,6 +85,24 @@ class EventProfile < ActiveRecord::Base
     end
   end 
 
+  def notes_summary
+     if min_note and max_note
+       min = Note.find_by_midi_note(min_note).name
+       max = Note.find_by_midi_note(max_note).name
+       "#{no_of_notes} from #{min} to #{max}"
+     else 
+       "N/A"
+     end
+  end
+
+  def samples_summary
+    if sample_group
+      sample_group_name
+    else
+      "N/A"
+    end
+  end
+  
   def initialise_notes
     if self.notes_in_range.any? and self.note_ids.none?
       self.note_ids = self.notes_in_range.collect{|x|x.id}
@@ -125,7 +145,7 @@ class EventProfile < ActiveRecord::Base
   end 
 
   def EventProfile.select_options
-    all.collect{|x|[x.name,x.id]}
+    where(:active => true).collect{|x|[x.name,x.id]}
   end
 
 end

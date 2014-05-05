@@ -1,0 +1,31 @@
+<h1><%= EventProfile.model_name.human(count: 2) %></h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= EventProfile.human_attribute_name(:active) %></th>
+      <th><%= EventProfile.human_attribute_name(:port) %></th>
+      <th><%= EventProfile.human_attribute_name(:name) %></th>
+      <th><%= EventProfile.human_attribute_name(:notes_summary) %></th>
+      <th><%= EventProfile.human_attribute_name(:samples_summary) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event_profiles.each do |event_profile| %>
+      <tr>
+        <td>
+          <%= check_box_tag(
+                "event_profile_#{event_profile.id}",
+                "event_profile_#{event_profile.id}",
+                event_profile.active
+              )%>
+          <%= event_profile.active %>
+        </td>
+        <td><%= event_profile.ip_address %>:<%= event_profile.port %></td>
+        <td><%= event_profile.name %></td>
+        <td><%= event_profile.notes_summary %></td>
+        <td><%= event_profile.samples_summary %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

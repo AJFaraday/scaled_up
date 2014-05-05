@@ -9,6 +9,7 @@ class CreateEventProfiles < ActiveRecord::Migration
       t.integer :default_length_id
       t.string :ip_address
       t.integer :port
+      t.boolean :active
 
       t.timestamps
     end

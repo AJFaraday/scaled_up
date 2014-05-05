@@ -10,7 +10,7 @@ en:
         source: Your Name
         steps: Steps
         sample_id: Sample
-        event_profile_id: Event Profile
+        event_profile_id: Instrument
         length_id: Length
         
 

@@ -13,8 +13,6 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * UI to show queued events.
 * UI to show the sequence which has yet been played (not sure about this)
 * General styling improvement, make it look like an app instead of a word document.
-* Implement System Settings from config/system_setings.yml
-* Translations for all user-facing attributes, particularly source, which is meaningless and event profile, which I could use a better name for.
 * More than one option for pure data patches, "audio skinning"
 * Some form of stats on events, which notes/samples are chosen, who makes the most input. 
 * Write some unit tests - yawn

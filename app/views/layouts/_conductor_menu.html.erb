@@ -1,11 +1,14 @@
 <% if local_request? %>
   <div class='btn-group btn-group-vertical'>
-    <%= link_to t('.new_event'), root_path, class: 'btn btn-default' %>
-    <%= link_to SystemSetting.model_name.human(count: 2),
-                system_settings_path,
+    <%= link_to t('.new_event'), root_path, 
+                class: 'btn btn-default' %>
+    <%= link_to EventProfile.model_name.human(count: 2), event_profiles_path,
                 class: 'btn btn-default' %>
     <%= link_to "Edit #{SystemSetting.model_name.human(count: 2)}",
                 edit_system_settings_path,
+                class: 'btn btn-default' %>
+    <%= link_to SystemSetting.model_name.human(count: 2),
+                system_settings_path,
                 class: 'btn btn-default' %>
   </div>
 <% end %>
