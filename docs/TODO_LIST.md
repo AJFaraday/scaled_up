@@ -20,3 +20,9 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * Write some unit tests - yawn
 * Write controller tests - yawn
 * Write feature tests - eek
+
+## Issues 
+
+Pending me using a proper issue tracking system:
+
+1. Select an event profile - Change note value - click note/sample - note value reverts
