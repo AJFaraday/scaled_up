@@ -11,7 +11,7 @@
   <div id='main_form' style="display:none;">
 
   <div class='button_holder'>  
-    <div class='btn-group' data-toggle='buttons'>
+    <div class='btn-group' id='profiles' data-toggle='buttons'>
       <% EventProfile.select_options.each do |name,id| %>
           <label class='btn btn-primary <%= 'active' if id == @event_profile.id %>'>
             <input type='radio' 

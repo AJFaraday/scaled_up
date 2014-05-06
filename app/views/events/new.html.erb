@@ -1,4 +1,7 @@
 <%= render :partial => 'form' %>
 <% content_for :after_main do %> 
   <%= render :partial => 'waiting_modal' %>
+  <div id='no_options_message'>
+    <%= raw(t('.no_options_message')) %>
+  </div>
 <% end %>

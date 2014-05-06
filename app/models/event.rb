@@ -85,7 +85,7 @@ class Event < ActiveRecord::Base
   end
 
   def fix_inactive_profile
-    unless self.event_profile.active == true
+    if self.event_profile.active == false and EventProfile.active.any?
       self.event_profile_id = EventProfile.active.first.id
     end
   end

@@ -1,0 +1,4 @@
+en:
+  events:
+    new: 
+      no_options_message: "You have no options! <br/> Either the performance is about to start or it's just finished."

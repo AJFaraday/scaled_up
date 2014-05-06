@@ -91,8 +91,15 @@ function init_form(){
 function show_form_if_source(){
   if($('#event_source').val() && $('#event_source').val().length > 3) {
     $('#main_form').show();
+    $('#no_options_message').hide();
   } else {
     $('#main_form').hide();
+    $('#no_options_message').hide();
+  }
+  if($.trim($('.btn-group#profiles').html()) == "") {
+    $('#main_form').hide();
+    $('#no_options_message').show();
+    setTimeout(function(){renew_form();init_form();},1000);
   }
 }
 
