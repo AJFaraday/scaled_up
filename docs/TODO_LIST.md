@@ -15,7 +15,6 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * General styling improvement, make it look like an app instead of a word document.
 * More than one option for pure data patches, "audio skinning"
 * Some form of stats on events, which notes/samples are chosen, who makes the most input. 
-* Work on performance of player (takes longer when there is an event unplayed, find the bottle neck)
 * Write some unit tests - yawn
 * Write controller tests - yawn
 * Write feature tests - eek
@@ -25,3 +24,13 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 Pending me using a proper issue tracking system:
 
 1. ~~Select an event profile - Change note value - click note/sample - note value reverts~~
+
+## Player Performance 
+
+2014-05-06 - Debugged the player to work with low-latency by keeping an array of played event messages in the Player object. Then updating these on cancelling the player.
+
+This works but delays the pain, closing the player is slow.
+
+My current idea for future development is to keep an attribute of 'last_message_played_id' on event_profiles and get rid of the played attribute of event_messages. Then I can just update the event_profiles on ending the player, which will be much more painless.
+
+I have not implemented this yet because there is a demo tomorrow and I need it working for now.

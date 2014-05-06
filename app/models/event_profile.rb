@@ -55,12 +55,12 @@ class EventProfile < ActiveRecord::Base
     @pd_connection=value
   end 
 
-  def get_current_event_message
+  def get_current_event_message(played_messages=[])
     self.steps_until_play ||= 0
     if self.steps_until_play > 0
       self.steps_until_play -= 1
     else
-      self.current_event_message = event_messages.unplayed.first
+      self.current_event_message = (event_messages.unplayed - played_messages).first
       if self.current_event_message
         self.steps_until_play = current_event_message.steps - 1
       end 
@@ -159,5 +159,22 @@ class EventProfile < ActiveRecord::Base
   def EventProfile.active
     where(:active => true)
   end 
+
+  # TODO - actually catch non-connecting profiles here
+  def EventProfile.all_with_pd_connections
+    event_profiles = EventProfile.all.select do |event_profile|
+      event_profile.pd_connection ? true : false
+    end
+    if event_profiles.any?
+      puts "#{event_profiles.count} event profiles connected."
+      puts event_profiles.collect{|x|x.name}.inspect
+      unconnected = EventProfile.all - event_profiles
+      puts "#{unconnected.count} event profiles could not connect."
+      puts unconnected.collect{|x|x.name}.inspect
+    else
+      raise "No event profiles can make a connection!"
+    end
+    return event_profiles
+  end
 
 end
