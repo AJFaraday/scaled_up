@@ -4,7 +4,7 @@ namespace :player do
 
   desc "Play through event messages at a given interval"
   task :play => :environment do
-    sleep_time = SystemSetting.get('quaver_time')
+    sleep_time = SystemSetting.get('quaver_time').to_f/1000
     @event_profiles = EventProfile.all.select do |event_profile|
       event_profile.pd_connection ? true : false
     end 
@@ -26,7 +26,7 @@ namespace :player do
       @event_profiles.each do |event_profile|        
         event_profile.play_current_event_message 
       end
-      sleep sleep_time.to_f/1000.0
+      sleep sleep_time
     end 
   end
 
