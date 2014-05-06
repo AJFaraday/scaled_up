@@ -65,6 +65,38 @@ unless EventProfile.find_by_name('Pentatonic Bass')
   })
 end
 
+unless EventProfile.find_by_name('Chromatic Blip')
+  EventProfile.create({
+    name: 'Chromatic Blip',
+    no_of_notes: 1,
+    min_note: 60,
+    max_note: 95,
+    length_steps: [1,2,4],
+    default_length_steps: 2,
+    active: true,
+    ip_address: '127.0.0.1',
+    port: 9910
+  })
+end
+
+unless EventProfile.find_by_name('Pentatonic Blip')
+  EventProfile.create({
+    name: 'Pentatonic Blip',
+    no_of_notes: 1,
+    min_note: 60,
+    max_note: 94,
+    midi_notes: [60,63,65,67,70,
+                 72,75,77,79,82,
+                 84,87,89,91,94],
+    length_steps: [1,2,4],
+    default_length_steps: 2,
+    active: false, 
+    ip_address: '127.0.0.1',
+    port: 9910
+  })
+end
+
+
 unless EventProfile.find_by_name('Chromatic Chord')
   EventProfile.create({
     name: 'Chromatic Chord',
