@@ -96,10 +96,18 @@ function show_form_if_source(){
     $('#main_form').hide();
     $('#no_options_message').hide();
   }
-  if($.trim($('.btn-group#profiles').html()) == "") {
+  if($('.btn-group#profiles').length == 1 & $.trim($('.btn-group#profiles').html()) == "") {
     $('#main_form').hide();
     $('#no_options_message').show();
-    setTimeout(function(){renew_form();init_form();},1000);
+    setTimeout(
+      function(){
+        renew_form();
+        if($.trim($('.btn-group#profiles').html()) != ""){
+          init_form();
+        }
+      },
+      2000
+    );
   }
 }
 

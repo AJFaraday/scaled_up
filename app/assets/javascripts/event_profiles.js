@@ -12,3 +12,7 @@ function init_profile_index() {
 $(document).ready(function() {
   init_profile_index();
 });
+
+$(document).on('page:load',function() {
+  init_profile_index();
+});
