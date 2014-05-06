@@ -74,7 +74,7 @@ function submit_if_complete() {
 } 
 
 function init_form(){
-  $('#event_event_profile_id').on('change', function(){renew_form()});
+  $('input[name="event[event_profile_id]"]').on('change', function(){renew_form()});
   $('#event_source').keyup(function(){show_form_if_source()});
   $(window).keydown(function(event){
     if(event.keyCode == 13) {
