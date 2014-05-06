@@ -59,15 +59,15 @@ unless EventProfile.find_by_name('Pentatonic Bass')
     midi_notes: [36,39,41,43,46,48,51,53,55,58,60],
     length_steps: [1,2,3,4,8],
     default_length_steps: 2, 
-    active: true,
+    active: false,
     ip_address: '127.0.0.1',
     port: 9901
   })
 end
 
-unless EventProfile.find_by_name('Three Notes')
+unless EventProfile.find_by_name('Chromatic Chord')
   EventProfile.create({
-    name: 'Three Notes',
+    name: 'Chromatic Chord',
     no_of_notes: 3,
     min_note: 60,
     max_note: 79,
@@ -79,13 +79,29 @@ unless EventProfile.find_by_name('Three Notes')
   })
 end
 
+unless EventProfile.find_by_name('Pentatonic Chord')
+  EventProfile.create({
+    name: 'Pentatnoic Chord',
+    no_of_notes: 3,
+    min_note: 60,
+    max_note: 79,
+    midi_notes: [60,63,65,67,70,72,75,77,79],    
+    length_steps: [4,8],
+    default_length_steps: 8,
+    active: false,
+    ip_address: '127.0.0.1',
+    port: 9921
+  })
+end
+
+
 unless EventProfile.find_by_name('Drum Kit')
   EventProfile.create({
     name: 'Drum Kit',
     sample_group_id: SampleGroup.find_by_name('Drums').id,
     length_steps: [1,2,4],
     default_length_steps: 2,
-    active: true,
+    active: false,
     ip_address: '127.0.0.1',
     port: 9930
   })
