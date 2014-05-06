@@ -27,15 +27,19 @@ class EventProfile < ActiveRecord::Base
   before_save :initialise_notes
   validates_uniqueness_of :name
 
-  has_many :event_messages do 
-    def unplayed
-      where(:played => false).order("id asc")
-    end
-  end
+  has_many :event_messages  
 
   attr_accessor :pd_connection
   attr_accessor :current_event_message
   attr_accessor :steps_until_play
+
+  def unplayed_messages
+    if last_played_message_id
+      event_messages.where(['played = ? and id > ?', false, last_played_message_id]).order("id asc")
+    else
+      event_messages.where(:played => false).order("id asc")
+    end
+  end
 
   def pd_connection
     if @pd_connection
@@ -55,12 +59,12 @@ class EventProfile < ActiveRecord::Base
     @pd_connection=value
   end 
 
-  def get_current_event_message(played_messages=[])
+  def get_current_event_message()
     self.steps_until_play ||= 0
     if self.steps_until_play > 0
       self.steps_until_play -= 1
     else
-      self.current_event_message = (event_messages.unplayed - played_messages).first
+      self.current_event_message = unplayed_messages.first
       if self.current_event_message
         self.steps_until_play = current_event_message.steps - 1
       end 
@@ -70,6 +74,7 @@ class EventProfile < ActiveRecord::Base
   def play_current_event_message
     if self.current_event_message and !self.current_event_message.played?
       self.current_event_message.play(self.pd_connection)
+      self.last_played_message_id = self.current_event_message.id
     end
   end 
 
