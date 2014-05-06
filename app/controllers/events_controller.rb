@@ -15,6 +15,8 @@ class EventsController < ApplicationController
       @event.save
       @saved = true 
       @event = @event.dup
+      @event.fix_inactive_profile
+      @event_profile = @event.event_profile
     else 
       @saved = false 
     end

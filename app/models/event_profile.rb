@@ -145,7 +145,11 @@ class EventProfile < ActiveRecord::Base
   end 
 
   def EventProfile.select_options
-    where(:active => true).collect{|x|[x.name,x.id]}
+    EventProfile.active.collect{|x|[x.name,x.id]}
   end
+
+  def EventProfile.active
+    where(:active => true)
+  end 
 
 end
