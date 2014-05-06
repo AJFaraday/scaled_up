@@ -26,7 +26,7 @@ namespace :player do
       @event_profiles.each do |event_profile|        
         event_profile.play_current_event_message 
       end
-      sleep sleep_time/1000
+      sleep sleep_time.to_f/1000.0
     end 
   end
 
