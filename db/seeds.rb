@@ -92,7 +92,7 @@ unless EventProfile.find_by_name('Pentatonic Blip')
     default_length_steps: 2,
     active: false, 
     ip_address: '127.0.0.1',
-    port: 9910
+    port: 9911
   })
 end
 

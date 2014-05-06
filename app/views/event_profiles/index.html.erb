@@ -16,10 +16,13 @@
         <td>
           <%= check_box_tag(
                 "event_profile_#{event_profile.id}",
-                "event_profile_#{event_profile.id}",
-                event_profile.active
+                event_profile.id,
+                event_profile.active,
+                class: 'event_profile_check'
               )%>
-          <%= event_profile.active %>
+          <span id="profile_<%= event_profile.id %>_active">
+            <%= event_profile.active %>
+          </span>
         </td>
         <td><%= event_profile.ip_address %>:<%= event_profile.port %></td>
         <td><%= event_profile.name %></td>
