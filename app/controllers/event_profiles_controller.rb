@@ -6,6 +6,14 @@ class EventProfilesController < ApplicationController
   def index
     
   end 
+
+  def update
+    respond_to do |format|
+      format.js do
+        @event_profile.toggle_active
+      end
+    end
+  end 
   
   protected
 

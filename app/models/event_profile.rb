@@ -144,6 +144,14 @@ class EventProfile < ActiveRecord::Base
     end 
   end 
 
+  def toggle_active
+    if active
+      update_attribute :active, false
+    else
+      update_attribute :active, true
+    end
+  end
+
   def EventProfile.select_options
     EventProfile.active.collect{|x|[x.name,x.id]}
   end

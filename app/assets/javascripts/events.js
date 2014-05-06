@@ -89,7 +89,7 @@ function init_form(){
 }
 
 function show_form_if_source(){
-  if($('#event_source').val().length > 3) {
+  if($('#event_source').val() && $('#event_source').val().length > 3) {
     $('#main_form').show();
   } else {
     $('#main_form').hide();
