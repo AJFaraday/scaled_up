@@ -17,7 +17,7 @@
 
     <div class="btn-group" data-toggle="buttons">
       <% @event_profile.lengths.each do |length| %>
-        <label class="btn btn-primary <%= "active" if length.id == @event_profile.default_length_id %>">
+        <label class="btn btn-primary <%= "active" if length.id == @event.length_id %>">
           <input type="radio" name='event[length_id]' value='<%= length.id %>'>
             <%= image_tag "/assets/notes/#{length.image}", 
                           alt: length.name,
