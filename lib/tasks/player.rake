@@ -10,7 +10,7 @@ namespace :player do
 
   desc "Crazy mode! Play all events in database irrelevant of previous playing"
   task :play_all => :environment do
-    EventMessage.where(:played => true).each{|x|x.update_attribute :played, false}
+    EventProfile.all.each{|x| x.update_attribute :last_played_message_id, 0}
     Player.new.play
   end
 
