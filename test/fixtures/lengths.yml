@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Quaver
   steps: 1
-  image: MyString
+  image: quaver.png
 
 two:
-  name: MyString
-  steps: 1
-  image: MyString
+  name: Crotchet
+  steps: 2
+  image: crotchet.png

@@ -1,9 +1,353 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  midi_note: 1
-
-two:
-  name: MyString
-  midi_note: 1
+---
+A0:
+  id: 1
+  name: A0
+  midi_note: 21
+A#0:
+  id: 2
+  name: A#0
+  midi_note: 22
+B0:
+  id: 3
+  name: B0
+  midi_note: 23
+C1:
+  id: 4
+  name: C1
+  midi_note: 24
+C#1:
+  id: 5
+  name: C#1
+  midi_note: 25
+D1:
+  id: 6
+  name: D1
+  midi_note: 26
+D#1:
+  id: 7
+  name: D#1
+  midi_note: 27
+E1:
+  id: 8
+  name: E1
+  midi_note: 28
+F1:
+  id: 9
+  name: F1
+  midi_note: 29
+F#1:
+  id: 10
+  name: F#1
+  midi_note: 30
+G1:
+  id: 11
+  name: G1
+  midi_note: 31
+G#1:
+  id: 12
+  name: G#1
+  midi_note: 32
+A1:
+  id: 13
+  name: A1
+  midi_note: 33
+A#1:
+  id: 14
+  name: A#1
+  midi_note: 34
+B1:
+  id: 15
+  name: B1
+  midi_note: 35
+C2:
+  id: 16
+  name: C2
+  midi_note: 36
+C#2:
+  id: 17
+  name: C#2
+  midi_note: 37
+D2:
+  id: 18
+  name: D2
+  midi_note: 38
+D#2:
+  id: 19
+  name: D#2
+  midi_note: 39
+E2:
+  id: 20
+  name: E2
+  midi_note: 40
+F2:
+  id: 21
+  name: F2
+  midi_note: 41
+F#2:
+  id: 22
+  name: F#2
+  midi_note: 42
+G2:
+  id: 23
+  name: G2
+  midi_note: 43
+G#2:
+  id: 24
+  name: G#2
+  midi_note: 44
+A2:
+  id: 25
+  name: A2
+  midi_note: 45
+A#2:
+  id: 26
+  name: A#2
+  midi_note: 46
+B2:
+  id: 27
+  name: B2
+  midi_note: 47
+C3:
+  id: 28
+  name: C3
+  midi_note: 48
+C#3:
+  id: 29
+  name: C#3
+  midi_note: 49
+D3:
+  id: 30
+  name: D3
+  midi_note: 50
+D#3:
+  id: 31
+  name: D#3
+  midi_note: 51
+E3:
+  id: 32
+  name: E3
+  midi_note: 52
+F3:
+  id: 33
+  name: F3
+  midi_note: 53
+F#3:
+  id: 34
+  name: F#3
+  midi_note: 54
+G3:
+  id: 35
+  name: G3
+  midi_note: 55
+G#3:
+  id: 36
+  name: G#3
+  midi_note: 56
+A3:
+  id: 37
+  name: A3
+  midi_note: 57
+A#3:
+  id: 38
+  name: A#3
+  midi_note: 58
+B3:
+  id: 39
+  name: B3
+  midi_note: 59
+C4:
+  id: 40
+  name: C4
+  midi_note: 60
+C#4:
+  id: 41
+  name: C#4
+  midi_note: 61
+D4:
+  id: 42
+  name: D4
+  midi_note: 62
+D#4:
+  id: 43
+  name: D#4
+  midi_note: 63
+E4:
+  id: 44
+  name: E4
+  midi_note: 64
+F4:
+  id: 45
+  name: F4
+  midi_note: 65
+F#4:
+  id: 46
+  name: F#4
+  midi_note: 66
+G4:
+  id: 47
+  name: G4
+  midi_note: 67
+G#4:
+  id: 48
+  name: G#4
+  midi_note: 68
+A4:
+  id: 49
+  name: A4
+  midi_note: 69
+A#4:
+  id: 50
+  name: A#4
+  midi_note: 70
+B4:
+  id: 51
+  name: B4
+  midi_note: 71
+C5:
+  id: 52
+  name: C5
+  midi_note: 72
+C#5:
+  id: 53
+  name: C#5
+  midi_note: 73
+D5:
+  id: 54
+  name: D5
+  midi_note: 74
+D#5:
+  id: 55
+  name: D#5
+  midi_note: 75
+E5:
+  id: 56
+  name: E5
+  midi_note: 76
+F5:
+  id: 57
+  name: F5
+  midi_note: 77
+F#5:
+  id: 58
+  name: F#5
+  midi_note: 78
+G5:
+  id: 59
+  name: G5
+  midi_note: 79
+G#5:
+  id: 60
+  name: G#5
+  midi_note: 80
+A5:
+  id: 61
+  name: A5
+  midi_note: 81
+A#5:
+  id: 62
+  name: A#5
+  midi_note: 82
+B5:
+  id: 63
+  name: B5
+  midi_note: 83
+C6:
+  id: 64
+  name: C6
+  midi_note: 84
+C#6:
+  id: 65
+  name: C#6
+  midi_note: 85
+D6:
+  id: 66
+  name: D6
+  midi_note: 86
+D#6:
+  id: 67
+  name: D#6
+  midi_note: 87
+E6:
+  id: 68
+  name: E6
+  midi_note: 88
+F6:
+  id: 69
+  name: F6
+  midi_note: 89
+F#6:
+  id: 70
+  name: F#6
+  midi_note: 90
+G6:
+  id: 71
+  name: G6
+  midi_note: 91
+G#6:
+  id: 72
+  name: G#6
+  midi_note: 92
+A6:
+  id: 73
+  name: A6
+  midi_note: 93
+A#6:
+  id: 74
+  name: A#6
+  midi_note: 94
+B6:
+  id: 75
+  name: B6
+  midi_note: 95
+C7:
+  id: 76
+  name: C7
+  midi_note: 96
+C#7:
+  id: 77
+  name: C#7
+  midi_note: 97
+D7:
+  id: 78
+  name: D7
+  midi_note: 98
+D#7:
+  id: 79
+  name: D#7
+  midi_note: 99
+E7:
+  id: 80
+  name: E7
+  midi_note: 100
+F7:
+  id: 81
+  name: F7
+  midi_note: 101
+F#7:
+  id: 82
+  name: F#7
+  midi_note: 102
+G7:
+  id: 83
+  name: G7
+  midi_note: 103
+G#7:
+  id: 84
+  name: G#7
+  midi_note: 104
+A7:
+  id: 85
+  name: A7
+  midi_note: 105
+A#7:
+  id: 86
+  name: A#7
+  midi_note: 106
+B7:
+  id: 87
+  name: B7
+  midi_note: 107
+C8:
+  id: 88
+  name: C8
+  midi_note: 108

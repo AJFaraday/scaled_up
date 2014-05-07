@@ -1,13 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   event_id: 1
-  event_profile_id: 1
-  content: MyString
+  event_profile_id: 3
+  content: "sample kick 220;"
   played: false
 
 two:
-  event_id: 1
+  id: 2
+  event_id: 2
   event_profile_id: 1
-  content: MyString
+  content: 'note 30 220;'
   played: false
+
+three:
+  id: 3
+  event_id: 3
+  event_profile_id: 2
+  content: 'note 30 220; note 34 220; note 37 220;'

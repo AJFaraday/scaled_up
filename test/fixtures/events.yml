@@ -1,11 +1,30 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  source: MyString
-  steps: 1
+drum:
+  id: 1
+  source: Name 1
+  steps: 2
   sample_id: 1
+  length_id: 2
+  event_profile_id: 3
 
-two:
-  source: MyString
-  steps: 1
-  sample_id: 1
+one_note:
+  id: 2
+  source: Name 2
+  steps: 2
+  sample_id:
+  event_profile_id: 1
+  midi_notes:
+  - 30
+
+three_notes:
+  id: 3
+  source: Name 3
+  steps: 2
+  sample_id:
+   event_profile_id: 2
+   midi_notes:
+   - 30
+   - 34
+   - 37
+

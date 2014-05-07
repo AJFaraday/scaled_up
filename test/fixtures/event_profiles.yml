@@ -1,19 +1,52 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+one_note:
+  id: 1
+  name: One Note Profile
   no_of_notes: 1
-  sample: false
-  min_note: 1
-  max_note: 1
-  ip_address: MyString
-  port: 1
+  sample_group_id: 
+  min_note: 30
+  max_note: 42
+  length_steps:
+    - 1
+    - 2
+  default_length_steps: 2
+  ip_address: '127.0.0.1'
+  port: 9900
+  last_played_message_id:
+  active: true
 
-two:
-  name: MyString
-  no_of_notes: 1
-  sample: false
-  min_note: 1
-  max_note: 1
-  ip_address: MyString
-  port: 1
+three_notes:
+  id: 2
+  name: Three Note Profile 
+  no_of_notes: 3
+  sample_group_id: 
+  min_note: 30
+  max_note: 42
+  ip_address: '127.0.0.1'
+  length_steps:
+    - 1
+    - 2
+  default_length_steps: 2
+  port: 9920
+  last_played_message_id:
+  active: true
+
+drums:
+  id: 3
+  name: Drum Profile
+  no_of_notes: 0
+  sample_group_id: 1
+  min_note:
+  max_note:
+  length_steps:
+    - 1
+    - 2
+  default_length_steps: 2
+  ip_address: '127.0.0.1'
+  port: 9930
+  last_played_message_id:
+  active: true
+
+
+
