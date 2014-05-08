@@ -113,7 +113,7 @@ end
 
 unless EventProfile.find_by_name('Pentatonic Chord')
   EventProfile.create({
-    name: 'Pentatnoic Chord',
+    name: 'Pentatonic Chord',
     no_of_notes: 3,
     min_note: 60,
     max_note: 79,
