@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>ScaledUp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag params[:controller] %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" 
+        content="width=device-width, 
+                 initial-scale=1,                 
+                 maximum-scale=1,
+                 user-scalable=no">
+
 </head>
 <body>
 
-  <div class='holder'>
+  <div class='container'>
 
     <div class='header'>
-      <h1><%= t('.title') %></h1>
+      <%= image_tag 'header.jpg', size: '300x100' %>
       <%= render :partial => 'layouts/conductor_menu' %>
       <%= render :partial => 'layouts/flash_message' %>
     </div> 
@@ -21,11 +27,14 @@
 
       <%= yield %>
 
+      <div class='end_spacer'></div>
     </div>
     <div id='after_main'>
       <%= yield :after_main %>
     </div> 
+   
   </div>
+
 
 </body>
 </html>
