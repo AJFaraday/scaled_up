@@ -30,9 +30,10 @@ Basically, it is a web interface for multiple people to send control input to th
 
 (from the root directory of Scaled Up^)
 
-* `rails s`
 * Open Pure Data and open any file from pd beginning with su- and ending with .pd
 * `rake player:play`
+* `rails s`
+* Open a browser and point it to localhost:3000
 
 Options for PD patches:
 
