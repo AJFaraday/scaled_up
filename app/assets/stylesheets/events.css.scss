@@ -8,13 +8,13 @@ $black_note_hover: #111111 ;
 $black_note_selected: #000000 ;
 $black_note_inactive: #555555 ;
 
-$keyboard_back: #4656EB ;
+$keyboard_back: #bbb740 ;
 $key_offset: 40px;
 
-$sample_button_background: #3071a9;
-$sample_button_hover: #6688FF;
+$sample_button_background: #fff740;
+$sample_button_hover: #fff970;
 $sample_button_text:#000000; 
-$sample_button_holder: #444499 ;
+$sample_button_holder: #bbb740 ;
 
 .button_holder {
   padding-bottom: 10px;
@@ -32,9 +32,10 @@ $sample_button_holder: #444499 ;
 .sample_button_holder {
   position:relative;
   float:left;
+
   background-color:$sample_button_holder;
   padding: 2px;
-  margin-top: 16px;  
+  //margin-top: 16px;  
 }
 
 
@@ -46,7 +47,7 @@ $sample_button_holder: #444499 ;
     position:relative;
     float: left; 
     height: 50px;
-    min-width: 100px;
+    min-width: 91px;
     text-align: center;
     border: 2px solid black;
     padding-top: 13px;

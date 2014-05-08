@@ -17,20 +17,21 @@
 @import "bootstrap";
 
 html, body {
-  background-color: #ffffdd;
+  background-color: #eaf69b;
 }
 
 
 .container {
   background-color: #faf695;
+  border-radius: 0px 0px 20px 20px; 
 }
 
-.btn-primary {
+.btn-profile {
   margin-bottom: 5px;
 }
 
 .end_spacer {
-  height: 40px;
+  height: 20px;
   width: 100%;
   float: left;
 }
