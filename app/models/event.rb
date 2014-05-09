@@ -29,7 +29,9 @@ class Event < ActiveRecord::Base
   after_create :create_event_message
 
   def init_event_profile
-    self.event_profile_id ||= EventProfile.first.id
+    if EventProfile.active.any?
+      self.event_profile_id ||= EventProfile.active.first.id
+    end
   end 
 
   def create_event_message
@@ -85,8 +87,12 @@ class Event < ActiveRecord::Base
   end
 
   def fix_inactive_profile
-    if self.event_profile.active == false and EventProfile.active.any?
-      self.event_profile_id = EventProfile.active.first.id
+    if self.event_profile and self.event_profile.active == false 
+      if EventProfile.active.any?
+        self.event_profile_id = EventProfile.active.first.id
+      else
+        self.event_profile_id = nil
+      end
     end
   end
 

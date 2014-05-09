@@ -89,20 +89,20 @@ function init_form(){
 }
 
 function show_form_if_source(){
-  if($('#event_source').val() && $('#event_source').val().length >= 3) {
+  if($('#event_source').length == 1 && $('#event_source').val().length >= 3) {
     $('#main_form').show();
     $('#no_options_message').hide();
   } else {
     $('#main_form').hide();
     $('#no_options_message').hide();
   }
-  if($('.btn-group#profiles').length == 1 & $.trim($('.btn-group#profiles').html()) == "") {
+  if($('#main_form').length < 1 & $('#event_source').length == 1) {
     $('#main_form').hide();
     $('#no_options_message').show();
     setTimeout(
       function(){
         renew_form();
-        if($.trim($('.btn-group#profiles').html()) != ""){
+        if($('#main_form').length < 1 & $('#event_source').length == 1){
           init_form();
         }
       },

@@ -1,50 +1,54 @@
 <%= form_for(@event) do |f| %>
 
-  <%= hidden_field_tag :note_requirement, @event_profile.no_of_notes %>
 
   <p>
     <%= f.label :source %>
     <%= f.text_field :source %>
   </p>
 
+  <% if @event_profile %>
+    <div id='main_form' style="display:none;">
 
-  <div id='main_form' style="display:none;">
+      <%= hidden_field_tag :note_requirement, @event_profile.no_of_notes %>
 
-  <div class='button_holder'>  
-    <% EventProfile.select_options.each do |name,id| %>
-      <label class='btn btn-default btn-profile <%= 'active' if id == @event_profile.id %>'>
-        <input type='radio' 
-                 <%= 'checked' if id == @event_profile.id %>
-                 id='event_event_profile_id' 
-                 name='event[event_profile_id]' 
-                 value="<%= id %>"
-                 style='display:none;'>          
-          <%= name %>
-        </input>
-      </label>
-    <% end %>
-  </div>
+      <div class='button_holder'>
+        <% EventProfile.select_options.each do |name, id| %>
+          <label class='btn btn-default btn-profile <%= 'active' if id == @event_profile.id %>'>
+            <input type='radio'
+                   <%= 'checked' if id == @event_profile.id %>
+                   id='event_event_profile_id'
+                   name='event[event_profile_id]'
+                   value="<%= id %>"
+                   style='display:none;'>
+            <%= name %>
+            </input>
+          </label>
+        <% end %>
+      </div>
 
-  <div class='button_holder'>
-    <div class="btn-group" data-toggle="buttons">
-      <% @event_profile.lengths.each do |length| %>
-        <label class="btn btn-default <%= "active" if length.id == @event.length_id %>">
-          <input type="radio" 
-                 name='event[length_id]' 
-                 <%= 'checked' if length.id == @event.length_id %>
-                 value='<%= length.id %>'>
-            <%= image_tag "/assets/notes/#{length.image}", 
-                          alt: length.name,
-                          title: length.name,
-                          class: 'length_image' %>
-          </input>
-        </label>
-      <% end %>
+      <div class='button_holder'>
+        <div class="btn-group" data-toggle="buttons">
+          <% @event_profile.lengths.each do |length| %>
+            <label class="btn btn-default <%= "active" if length.id == @event.length_id %>">
+              <input type="radio"
+                     name='event[length_id]'
+                     <%= 'checked' if length.id == @event.length_id %>
+                     value='<%= length.id %>'>
+              <%= image_tag "/assets/notes/#{length.image}",
+                            alt: length.name,
+                            title: length.name,
+                            class: 'length_image' %>
+              </input>
+            </label>
+          <% end %>
+        </div>
+      </div>
+
+      <%= render :partial => 'form_notes' %>
+
+      <%= render :partial => 'form_samples', :locals => {:f => f} %>
+
     </div>
-  </div>
-
-    <%= render :partial => 'form_notes' %>
-
-    <%= render :partial => 'form_samples', :locals => {:f => f} %>
+  <% end %>
 
 <% end %>
