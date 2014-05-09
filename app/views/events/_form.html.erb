@@ -11,20 +11,18 @@
   <div id='main_form' style="display:none;">
 
   <div class='button_holder'>  
-    <!--<div class='btn-group' id='profiles' data-toggle='buttons'>-->
-      <% EventProfile.select_options.each do |name,id| %>
-          <label class='btn btn-default btn-profile <%= 'active' if id == @event_profile.id %>'>
-            <input type='radio' 
-                   <%= 'checked' if id == @event_profile.id %>
-                   id='event_event_profile_id' 
-                   name='event[event_profile_id]' 
-                   value="<%= id %>"
-                   style='display:none;'>          
-              <%= name %>
-            </input>
-          </label>
-      <% end %>
-    <!--</div> -->
+    <% EventProfile.select_options.each do |name,id| %>
+      <label class='btn btn-default btn-profile <%= 'active' if id == @event_profile.id %>'>
+        <input type='radio' 
+                 <%= 'checked' if id == @event_profile.id %>
+                 id='event_event_profile_id' 
+                 name='event[event_profile_id]' 
+                 value="<%= id %>"
+                 style='display:none;'>          
+          <%= name %>
+        </input>
+      </label>
+    <% end %>
   </div>
 
   <div class='button_holder'>
