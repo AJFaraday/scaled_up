@@ -45,7 +45,7 @@ class Event < ActiveRecord::Base
       end
       @display_message << " #{self.length.name}"
     elsif self.sample
-      @display_message = @message = "sample #{self.sample.name}"
+      @display_message = @message = "sample #{self.sample.name};"
     end
     EventMessage.create!(
       event_id: self.id,
@@ -87,7 +87,7 @@ class Event < ActiveRecord::Base
   end
 
   def fix_inactive_profile
-    if self.event_profile and self.event_profile.active == false 
+    if (self.event_profile and self.event_profile.active == false)
       if EventProfile.active.any?
         self.event_profile_id = EventProfile.active.first.id
       else

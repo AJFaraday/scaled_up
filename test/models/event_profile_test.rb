@@ -34,6 +34,55 @@ class EventProfileTest < ActiveSupport::TestCase
     assert_equal 5, event_profile.last_played_message_id
   end
 
+  test 'has_note?' do
+    event_profile = EventProfile.find(1)
+    event_profile.initialise_notes
+    assert event_profile.has_note?('C2')
+    assert !event_profile.has_note?('C5')
+  end
+
+  test 'notes_in_range' do
+    event_profile = EventProfile.find(1)
+    x = event_profile.notes_in_range
+    assert x.is_a?(Note::ActiveRecord_Relation)
+    assert x[0].is_a?(Note)
+    assert_equal 13, x.length
+  end
+
+  test 'notes_summary' do 
+    event_profile = EventProfile.find(1)
+    x = event_profile.notes_summary
+    assert x.is_a?(String)
+    assert x.include?('F#1')    
+    assert x.include?('F#2')
+    assert x.include?(event_profile.no_of_notes.to_s)
+   
+    event_profile = EventProfile.find(3)
+    x = event_profile.notes_summary 
+    assert x.is_a?(String)
+    assert_equal 'N/A', x
+  end
+
+  test 'samples_summary' do
+    event_profile = EventProfile.find(3)
+    x = event_profile.samples_summary
+    assert x.is_a?(String)
+    assert_equal 'Drums', x
+
+    event_profile = EventProfile.find(1)
+    x = event_profile.samples_summary 
+    assert x.is_a?(String)
+    assert_equal 'N/A', x
+  end
+ 
+  test 'toggle_active' do
+    event_profile = EventProfile.find(1)
+    assert event_profile.active
+    event_profile.toggle_active
+    assert !event_profile.active
+    event_profile.toggle_active
+    assert event_profile.active
+  end
 
 
 end

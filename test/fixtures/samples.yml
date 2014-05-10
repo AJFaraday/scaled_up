@@ -1,16 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   name: kick
   sample_group_id: 1
   display_name: Kick
 
 two:
+  id: 2
   name: snare
   sample_group_id: 1
   display_name: Snare
 
 three:
+  id: 3
   name: woop
   sample_group_id: 2
   display_name: Wooooo

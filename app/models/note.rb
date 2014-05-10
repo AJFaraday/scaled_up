@@ -14,7 +14,6 @@ class Note < ActiveRecord::Base
     until midi_note > 108
       note = NOTE_NAMES[octave_index%12]
       octave += 1 if note == 'C'
-      puts "note: #{note}#{octave}"
 
       unless Note.find_by_name("#{note}#{octave}")
         Note. create(

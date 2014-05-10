@@ -8,7 +8,6 @@ class EventMessage < ActiveRecord::Base
     self.content.split(';').each do |part|
       pd_connection.send("#{part};\n",0)
     end 
-    self.played = true
     self
   end
 
