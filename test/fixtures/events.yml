@@ -14,17 +14,10 @@ one_note:
   steps: 2
   sample_id:
   event_profile_id: 1
-  midi_notes:
-  - 30
 
 three_notes:
   id: 3
   source: Name 3
   steps: 2
   sample_id:
-   event_profile_id: 2
-   midi_notes:
-   - 30
-   - 34
-   - 37
-
+  event_profile_id: 2

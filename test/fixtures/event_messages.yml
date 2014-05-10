@@ -19,3 +19,4 @@ three:
   event_id: 3
   event_profile_id: 2
   content: 'note 30 220; note 34 220; note 37 220;'
+  played: false

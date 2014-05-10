@@ -6,6 +6,7 @@ one:
   description: QUAVERquaverQUAVERquaver
   default: 110
   value: 220
+  value_class: integer
 
 
 two:
@@ -14,6 +15,7 @@ two:
   description: WAIT STEPS
   default: 3
   value: 5
+  value_class: integer
 
 three:
   name: wait_step_time
@@ -21,3 +23,4 @@ three:
   description: Wait Step Time
   default: 400
   value: 200
+  value_class: integer

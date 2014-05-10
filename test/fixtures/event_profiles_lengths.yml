@@ -1,0 +1,19 @@
+---
+epl_1_1:
+  event_profile_id:  1
+  length_id: 1
+epl_1_2:
+  event_profile_id:  1
+  length_id: 2
+epl_2_1:
+  event_profile_id:  2
+  length_id: 1
+epl_2_2:
+  event_profile_id:  2
+  length_id: 2
+epl_3_1:
+  event_profile_id:  3
+  length_id: 1
+epl_3_2:
+  event_profile_id:  3
+  length_id: 2

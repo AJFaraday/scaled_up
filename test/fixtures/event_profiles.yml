@@ -7,10 +7,7 @@ one_note:
   sample_group_id: 
   min_note: 30
   max_note: 42
-  length_steps:
-    - 1
-    - 2
-  default_length_steps: 2
+  default_length_id: 2
   ip_address: '127.0.0.1'
   port: 9900
   last_played_message_id:
@@ -24,10 +21,7 @@ three_notes:
   min_note: 30
   max_note: 42
   ip_address: '127.0.0.1'
-  length_steps:
-    - 1
-    - 2
-  default_length_steps: 2
+  default_length_id: 2
   port: 9920
   last_played_message_id:
   active: true
@@ -39,12 +33,22 @@ drums:
   sample_group_id: 1
   min_note:
   max_note:
-  length_steps:
-    - 1
-    - 2
-  default_length_steps: 2
+  default_length_id: 2
   ip_address: '127.0.0.1'
   port: 9930
+  last_played_message_id:
+  active: true
+
+just_c:
+  id: 4
+  name: Just C
+  no_of_notes: 1
+  sample_group_id:
+  min_note: 30
+  max_note: 42
+  default_length_id: 2
+  ip_address: '127.0.0.1'
+  port: 9910
   last_played_message_id:
   active: true
 
