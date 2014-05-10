@@ -17,7 +17,7 @@ class Note < ActiveRecord::Base
       puts "note: #{note}#{octave}"
 
       unless Note.find_by_name("#{note}#{octave}")
-        Note.create(
+        Note. create(
           name: "#{note}#{octave}",
           midi_note: midi_note
         )

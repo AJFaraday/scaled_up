@@ -41,6 +41,9 @@ class EventProfile < ActiveRecord::Base
     end
   end
 
+  # TODO This doesn't error here because it sends no messages to the connection
+  # TODO Send one, and make sure the player ignores the profile
+  # TODO and reports the failure to the console.
   def pd_connection
     if @pd_connection
       @pd_connection
@@ -59,7 +62,7 @@ class EventProfile < ActiveRecord::Base
     @pd_connection=value
   end 
 
-  def get_current_event_message()
+  def get_current_event_message
     self.steps_until_play ||= 0
     if self.steps_until_play > 0
       self.steps_until_play -= 1

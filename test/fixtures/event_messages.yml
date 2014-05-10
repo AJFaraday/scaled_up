@@ -3,20 +3,39 @@
 one:
   id: 1
   event_id: 1
+  steps: 2
   event_profile_id: 3
   content: "sample kick 220;"
   played: false
 
-two:
-  id: 2
-  event_id: 2
-  event_profile_id: 1
-  content: 'note 30 220;'
-  played: false
-
 three:
-  id: 3
+  id: 2
   event_id: 3
+  steps: 2
   event_profile_id: 2
   content: 'note 30 220; note 34 220; note 37 220;'
+  played: false
+
+ep_1_msg_1:
+  id: 3
+  event_id: 2
+  steps: 2
+  event_profile_id: 1
+  content: 'note 30 220;'
+  played: true
+
+ep_1_msg_2:
+  id: 4
+  event_id: 2
+  steps: 2
+  event_profile_id: 1
+  content: 'note 32 220;'
+  played: false
+
+ep_1_msg_3:
+  id: 5
+  event_id: 2
+  steps: 2
+  event_profile_id: 1
+  content: 'note 34 220;'
   played: false
