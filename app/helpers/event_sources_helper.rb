@@ -1,2 +1,2 @@
-module EventSourceHelper
+module EventSourcesHelper
 end

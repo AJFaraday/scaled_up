@@ -1,17 +1,17 @@
-<h1>TODO... MAKE THIS PROFILES... <%= Sample.model_name.human(count: 2) %></h1>
+<h1><%= EventProfile.model_name.human(count: 2) %></h1>
 
 <table class=table>
   <thead>
     <tr>
-      <th><%= EventSourceSampleStat.human_attribute_name(:name) %></th>
-      <th><%= EventSourceSampleStat.human_attribute_name(:cnt) %></th>
+      <th><%= EventSourceProfileStat.human_attribute_name(:name) %></th>
+      <th><%= EventSourceProfileStat.human_attribute_name(:cnt) %></th>
     </tr>
   </thead>
   <tbody>
-    <% @event_source.sample_stats.each do |sample_stat| %>
+    <% @event_source.profile_stats.each do |profile_stat| %>
       <tr>
-        <td><%= sample_stat.name %></td>
-        <td><%= sample_stat.cnt %></td>
+        <td><%= profile_stat.name %></td>
+        <td><%= profile_stat.cnt %></td>
       </tr>
     <% end %>
   </tbody>

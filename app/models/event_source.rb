@@ -12,6 +12,10 @@ class EventSource < ActiveRecord::Base
            foreign_key: :source, 
            primary_key: :source
 
+  has_many :profile_stats,
+           class_name: 'EventSourceProfileStat',
+           foreign_key: :source,
+           primary_key: :source
 
 end
 
