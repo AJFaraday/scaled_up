@@ -1,4 +1,4 @@
-class CreateEventSourceNoteStats < ActiveRecord::Migration
+class CreateEventSourceSampleStats < ActiveRecord::Migration
 
   def change
       execute <<-SQL

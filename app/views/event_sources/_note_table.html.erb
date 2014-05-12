@@ -1,0 +1,18 @@
+<h2><%= Note.model_name.human(count: 2) %></h2>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= EventSourceNoteStat.human_attribute_name(:name) %></th>
+      <th><%= EventSourceNoteStat.human_attribute_name(:cnt) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event_source.note_stats.each do |note_stat| %>
+      <tr>
+        <td><%= note_stat.name %></td>
+        <td><%= note_stat.cnt %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

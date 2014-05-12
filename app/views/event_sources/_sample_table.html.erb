@@ -1,0 +1,18 @@
+<h1><%= Sample.model_name.human(count: 2) %></h1>
+
+<table class=table>
+  <thead>
+    <tr>
+      <th><%= EventSourceSampleStat.human_attribute_name(:name) %></th>
+      <th><%= EventSourceSampleStat.human_attribute_name(:cnt) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event_source.sample_stats.each do |sample_stat| %>
+      <tr>
+        <td><%= sample_stat.name %></td>
+        <td><%= sample_stat.cnt %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

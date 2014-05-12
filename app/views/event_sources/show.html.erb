@@ -1,0 +1,9 @@
+<h1><%= @event_source.source %></h1>
+<p><%= @event_source.source %> has played <%= @event_source.cnt %> notes.</p>
+
+
+<div class="row">
+  <div class="col-md-4"><%= render partial: 'note_table' %></div>
+  <div class="col-md-4"><%= render partial: 'sample_table' %></div>
+  <div class="col-md-4"><%= render partial: 'profile_table' %></div>
+</div>

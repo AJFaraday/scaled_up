@@ -1,0 +1,46 @@
+<br/>
+<br/>
+<br/>
+<div class='text-center'>
+  <div class='massive'>
+    <%= @count %>
+  </div>
+  people are using Scaled-Up^
+</div>
+
+<h2>Who are they?</h2>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= EventSource.human_attribute_name(:source) %></th>
+      <th><%= EventSource.human_attribute_name(:cnt) %></th>
+      <th><%= t('.favourite_note') %></th>
+      <th><%= t('.favourite_sample') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @event_sources.each do |event_source| %>
+      <tr>
+        <td><%= link_to event_source.source, event_source_path(event_source) %></td>
+        <td><%= event_source.cnt %></td>
+        <td>
+          <% if event_source.note_stats.any? %>
+            <%= event_source.note_stats.first.name %>
+            (<%= event_source.note_stats.first.cnt %>)
+          <% else %>
+            N/A
+          <% end %>
+        </td>
+        <td>
+          <% if event_source.sample_stats.any? %>
+            <%= event_source.sample_stats.first.name %>
+            (<%= event_source.sample_stats.first.cnt %>)
+          <% else %>
+            N/A
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
