@@ -96,4 +96,8 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def Event.source_count
+    EventSource.count
+  end
+
 end
