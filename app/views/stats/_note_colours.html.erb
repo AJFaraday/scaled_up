@@ -1,0 +1,32 @@
+<canvas id='colour_chart' width ='300px' height='300px'></canvas>
+<script type='text/javascript'>
+  var ctx = $('#colour_chart').get(0).getContext('2d');
+  
+  var data = <%= raw NoteStat.colour_stats_pie_data %>;
+
+  var pie_options = {
+    animation: false
+  }
+
+  var colour_chart = new Chart(ctx).Pie(data,pie_options);
+</script>
+
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= t('.colour') %></th>
+      <th><%= t('count') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= t('.white') %></td>
+      <td><%= NoteStat.white_note_count %></td>
+    </tr>
+    <tr>
+      <td><%= t('.black') %></td>
+      <td><%= NoteStat.black_note_count %></td>
+    </tr>
+  </tbody>
+</table>
