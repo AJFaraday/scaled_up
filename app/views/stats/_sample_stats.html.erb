@@ -1,0 +1,23 @@
+<h2><%= SampleStat.model_name.human(count: 2) %></h2>
+<div class='text-center'>
+  <div class='massive'>
+    <%= @sample_count %>
+  </div>
+  samples have been played.
+</div>
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= SampleStat.human_attribute_name(:name) %></th>
+      <th><%= SampleStat.human_attribute_name(:cnt) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sample_stats.each do |stat| %>
+      <tr>
+        <td><%= stat.name %></td>
+        <td><%= stat.cnt %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :event_sources, only: [:index,:show]
+  resources :stats, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

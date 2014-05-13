@@ -1,0 +1,23 @@
+<h2><%= NoteStat.model_name.human(count: 2) %></h2>
+<div class='text-center'>
+  <div class='massive'>
+    <%= @note_count %>
+  </div>
+  notes have been played.
+</div>
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= NoteStat.human_attribute_name(:name) %></th>
+      <th><%= NoteStat.human_attribute_name(:cnt) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @note_stats.each do |stat| %>
+      <tr>
+        <td><%= stat.name %></td>
+        <td><%= stat.cnt %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
