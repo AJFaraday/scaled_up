@@ -1,0 +1,307 @@
+// Heat map classes, end of class maps to percentage
+
+    .heat-map-0 {
+      background-color: rgb(0,255,0) ;
+    }
+    .heat-map-1 {
+      background-color: rgb(2,252,0) ;
+    }
+    .heat-map-2 {
+      background-color: rgb(5,249,0) ;
+    }
+    .heat-map-3 {
+      background-color: rgb(7,247,0) ;
+    }
+    .heat-map-4 {
+      background-color: rgb(10,244,0) ;
+    }
+    .heat-map-5 {
+      background-color: rgb(12,242,0) ;
+    }
+    .heat-map-6 {
+      background-color: rgb(15,239,0) ;
+    }
+    .heat-map-7 {
+      background-color: rgb(17,237,0) ;
+    }
+    .heat-map-8 {
+      background-color: rgb(20,234,0) ;
+    }
+    .heat-map-9 {
+      background-color: rgb(22,232,0) ;
+    }
+    .heat-map-10 {
+      background-color: rgb(25,229,0) ;
+    }
+    .heat-map-11 {
+      background-color: rgb(28,226,0) ;
+    }
+    .heat-map-12 {
+      background-color: rgb(30,224,0) ;
+    }
+    .heat-map-13 {
+      background-color: rgb(33,221,0) ;
+    }
+    .heat-map-14 {
+      background-color: rgb(35,219,0) ;
+    }
+    .heat-map-15 {
+      background-color: rgb(38,216,0) ;
+    }
+    .heat-map-16 {
+      background-color: rgb(40,214,0) ;
+    }
+    .heat-map-17 {
+      background-color: rgb(43,211,0) ;
+    }
+    .heat-map-18 {
+      background-color: rgb(45,209,0) ;
+    }
+    .heat-map-19 {
+      background-color: rgb(48,206,0) ;
+    }
+    .heat-map-20 {
+      background-color: rgb(50,203,0) ;
+    }
+    .heat-map-21 {
+      background-color: rgb(53,201,0) ;
+    }
+    .heat-map-22 {
+      background-color: rgb(56,198,0) ;
+    }
+    .heat-map-23 {
+      background-color: rgb(58,196,0) ;
+    }
+    .heat-map-24 {
+      background-color: rgb(61,193,0) ;
+    }
+    .heat-map-25 {
+      background-color: rgb(63,191,0) ;
+    }
+    .heat-map-26 {
+      background-color: rgb(66,188,0) ;
+    }
+    .heat-map-27 {
+      background-color: rgb(68,186,0) ;
+    }
+    .heat-map-28 {
+      background-color: rgb(71,183,0) ;
+    }
+    .heat-map-29 {
+      background-color: rgb(73,181,0) ;
+    }
+    .heat-map-30 {
+      background-color: rgb(76,178,0) ;
+    }
+    .heat-map-31 {
+      background-color: rgb(79,175,0) ;
+    }
+    .heat-map-32 {
+      background-color: rgb(81,173,0) ;
+    }
+    .heat-map-33 {
+      background-color: rgb(84,170,0) ;
+    }
+    .heat-map-34 {
+      background-color: rgb(86,168,0) ;
+    }
+    .heat-map-35 {
+      background-color: rgb(89,165,0) ;
+    }
+    .heat-map-36 {
+      background-color: rgb(91,163,0) ;
+    }
+    .heat-map-37 {
+      background-color: rgb(94,160,0) ;
+    }
+    .heat-map-38 {
+      background-color: rgb(96,158,0) ;
+    }
+    .heat-map-39 {
+      background-color: rgb(99,155,0) ;
+    }
+    .heat-map-40 {
+      background-color: rgb(101,152,0) ;
+    }
+    .heat-map-41 {
+      background-color: rgb(104,150,0) ;
+    }
+    .heat-map-42 {
+      background-color: rgb(107,147,0) ;
+    }
+    .heat-map-43 {
+      background-color: rgb(109,145,0) ;
+    }
+    .heat-map-44 {
+      background-color: rgb(112,142,0) ;
+    }
+    .heat-map-45 {
+      background-color: rgb(114,140,0) ;
+    }
+    .heat-map-46 {
+      background-color: rgb(117,137,0) ;
+    }
+    .heat-map-47 {
+      background-color: rgb(119,135,0) ;
+    }
+    .heat-map-48 {
+      background-color: rgb(122,132,0) ;
+    }
+    .heat-map-49 {
+      background-color: rgb(124,130,0) ;
+    }
+    .heat-map-50 {
+      background-color: rgb(127,127,0) ;
+    }
+    .heat-map-51 {
+      background-color: rgb(130,124,0) ;
+    }
+    .heat-map-52 {
+      background-color: rgb(132,122,0) ;
+    }
+    .heat-map-53 {
+      background-color: rgb(135,119,0) ;
+    }
+    .heat-map-54 {
+      background-color: rgb(137,117,0) ;
+    }
+    .heat-map-55 {
+      background-color: rgb(140,114,0) ;
+    }
+    .heat-map-56 {
+      background-color: rgb(142,112,0) ;
+    }
+    .heat-map-57 {
+      background-color: rgb(145,109,0) ;
+    }
+    .heat-map-58 {
+      background-color: rgb(147,107,0) ;
+    }
+    .heat-map-59 {
+      background-color: rgb(150,104,0) ;
+    }
+    .heat-map-60 {
+      background-color: rgb(153,101,0) ;
+    }
+    .heat-map-61 {
+      background-color: rgb(155,99,0) ;
+    }
+    .heat-map-62 {
+      background-color: rgb(158,96,0) ;
+    }
+    .heat-map-63 {
+      background-color: rgb(160,94,0) ;
+    }
+    .heat-map-64 {
+      background-color: rgb(163,91,0) ;
+    }
+    .heat-map-65 {
+      background-color: rgb(165,89,0) ;
+    }
+    .heat-map-66 {
+      background-color: rgb(168,86,0) ;
+    }
+    .heat-map-67 {
+      background-color: rgb(170,84,0) ;
+    }
+    .heat-map-68 {
+      background-color: rgb(173,81,0) ;
+    }
+    .heat-map-69 {
+      background-color: rgb(175,79,0) ;
+    }
+    .heat-map-70 {
+      background-color: rgb(178,76,0) ;
+    }
+    .heat-map-71 {
+      background-color: rgb(181,73,0) ;
+    }
+    .heat-map-72 {
+      background-color: rgb(183,71,0) ;
+    }
+    .heat-map-73 {
+      background-color: rgb(186,68,0) ;
+    }
+    .heat-map-74 {
+      background-color: rgb(188,66,0) ;
+    }
+    .heat-map-75 {
+      background-color: rgb(191,63,0) ;
+    }
+    .heat-map-76 {
+      background-color: rgb(193,61,0) ;
+    }
+    .heat-map-77 {
+      background-color: rgb(196,58,0) ;
+    }
+    .heat-map-78 {
+      background-color: rgb(198,56,0) ;
+    }
+    .heat-map-79 {
+      background-color: rgb(201,53,0) ;
+    }
+    .heat-map-80 {
+      background-color: rgb(204,50,0) ;
+    }
+    .heat-map-81 {
+      background-color: rgb(206,48,0) ;
+    }
+    .heat-map-82 {
+      background-color: rgb(209,45,0) ;
+    }
+    .heat-map-83 {
+      background-color: rgb(211,43,0) ;
+    }
+    .heat-map-84 {
+      background-color: rgb(214,40,0) ;
+    }
+    .heat-map-85 {
+      background-color: rgb(216,38,0) ;
+    }
+    .heat-map-86 {
+      background-color: rgb(219,35,0) ;
+    }
+    .heat-map-87 {
+      background-color: rgb(221,33,0) ;
+    }
+    .heat-map-88 {
+      background-color: rgb(224,30,0) ;
+    }
+    .heat-map-89 {
+      background-color: rgb(226,28,0) ;
+    }
+    .heat-map-90 {
+      background-color: rgb(229,25,0) ;
+    }
+    .heat-map-91 {
+      background-color: rgb(232,22,0) ;
+    }
+    .heat-map-92 {
+      background-color: rgb(234,20,0) ;
+    }
+    .heat-map-93 {
+      background-color: rgb(237,17,0) ;
+    }
+    .heat-map-94 {
+      background-color: rgb(239,15,0) ;
+    }
+    .heat-map-95 {
+      background-color: rgb(242,12,0) ;
+    }
+    .heat-map-96 {
+      background-color: rgb(244,10,0) ;
+    }
+    .heat-map-97 {
+      background-color: rgb(247,7,0) ;
+    }
+    .heat-map-98 {
+      background-color: rgb(249,5,0) ;
+    }
+    .heat-map-99 {
+      background-color: rgb(252,2,0) ;
+    }
+    .heat-map-100 {
+      background-color: rgb(255,0,0) ;
+    }
+
+
