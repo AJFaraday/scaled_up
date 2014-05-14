@@ -1,0 +1,23 @@
+<h1><%= ProfileStat.model_name.human(count: 2) %></h1> 
+<%= render partial: 'shared/pie_chart',
+           locals: {
+             name: 'profile_pie_chart',
+             data: ProfileStat.pie_chart_data
+           } %>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= ProfileStat.human_attribute_name(:name) %></th>
+      <th><%= ProfileStat.human_attribute_name(:cnt) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% ProfileStat.order('cnt desc').each do |stat| %>
+      <tr>
+        <td><%= stat.name %></td>
+        <td><%= stat.cnt  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

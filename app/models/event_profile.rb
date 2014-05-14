@@ -185,4 +185,44 @@ class EventProfile < ActiveRecord::Base
     return event_profiles
   end
 
+  def sql_for_note(note)
+    <<-SQL
+      select count(*) from events_notes en
+      inner join notes n on n.id = en.note_id
+      inner join events e on e.id = en.event_id
+      inner join event_profiles ep on ep.id = e.event_profile_id
+      where n.name like '%#{note}%' and n.name not like '%#{note}#%'
+      and ep.id = #{self.id};
+    SQL
+  end
+
+  def note_name_stats
+    counts = {}
+    notes = %w(A A# B C C# D D# E F F# G G#)
+    notes.each do |note|
+      query = sql_for_note(note)
+      counts[note] = EventProfile.connection.select_all(query).rows[0][0]
+    end
+    counts
+  end
+
+  def note_names_bar_data
+    name_stats = note_name_stats
+    notes =  %w(A A# B C C# D D# E F F# G G#)
+    data = {
+      labels: notes,
+      datasets: [
+        {
+          fillColor: '#FFFFFF',
+          strokeColor: '#000000',
+          data: notes.collect do |note|
+            name_stats[note]
+          end
+        }
+      ]
+    }
+    data.to_json
+  end
+
+
 end

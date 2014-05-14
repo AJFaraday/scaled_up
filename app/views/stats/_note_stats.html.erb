@@ -22,11 +22,13 @@
   var colour_chart = new Chart(ctx).Bar(data,bar_options);
 </script>
 
+<%= render partial: 'note_colours' %>
+
 <table class='table'>
   <thead>
     <tr>
-      <td><%= NoteStat.human_attribute_name(:name) %></td>
-      <td><%= NoteStat.human_attribute_name(:cnt)%></td>
+      <th><%= NoteStat.human_attribute_name(:name) %></th>
+      <th><%= NoteStat.human_attribute_name(:cnt)%></th>
     </tr>
   </thead>
   <tbody>
