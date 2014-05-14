@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :event_profiles do
     collection do
-      :renew_form
+      get :stats
     end
   end
 

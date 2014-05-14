@@ -1,7 +1,7 @@
 class EventProfilesController < ApplicationController
 
-  before_action :get_event_profiles, only: [:index]
-  before_action :get_event_profile, except:[:index]
+  before_action :get_event_profiles, only: [:index,:stats]
+  before_action :get_event_profile, only:[:update]
 
   def index
     
@@ -14,6 +14,10 @@ class EventProfilesController < ApplicationController
       end
     end
   end 
+
+  def stats
+
+  end
   
   protected
 
