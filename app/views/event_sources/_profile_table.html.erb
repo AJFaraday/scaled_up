@@ -1,5 +1,11 @@
 <h1><%= EventProfile.model_name.human(count: 2) %></h1>
 
+<%= render partial: 'shared/pie_chart',
+           locals: {
+             name: 'profile_pie_chart',
+             data: @event_source.profile_pie_chart_data
+           } %>
+
 <table class=table>
   <thead>
     <tr>

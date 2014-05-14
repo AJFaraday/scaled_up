@@ -1,5 +1,11 @@
 <h1><%= Sample.model_name.human(count: 2) %></h1>
 
+<%= render partial: 'shared/bar_chart', 
+           locals: {
+             data: @event_source.sample_stats_bar_data,
+             name: 'sample_bar_chart'
+           } %>
+
 <table class=table>
   <thead>
     <tr>

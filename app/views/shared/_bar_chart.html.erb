@@ -1,0 +1,14 @@
+<canvas id='<%= name %>' width ='350px' height='200px'></canvas>
+<script type='text/javascript'>
+  var ctx = $('#<%= name %>').get(0).getContext('2d');
+  
+  var data = <%= raw data %>;
+
+  var bar_options = {
+    animation: false,
+    barValueSpacing: 0
+  }
+
+  var colour_chart = new Chart(ctx).Bar(data,bar_options);
+</script>
+

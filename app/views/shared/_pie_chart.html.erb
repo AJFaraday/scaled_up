@@ -1,0 +1,13 @@
+<canvas id='<%= name %>' width ='300px' height='300px'></canvas>
+<script type='text/javascript'>
+  var ctx = $('#<%= name %>').get(0).getContext('2d');
+  
+  var data = <%= raw data %>;
+
+  var pie_options = {
+    animation: false
+  }
+
+  var colour_chart = new Chart(ctx).Pie(data,pie_options);
+</script>
+

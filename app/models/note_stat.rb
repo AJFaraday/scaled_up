@@ -1,5 +1,7 @@
 class NoteStat < ActiveRecord::Base
 
+  self.primary_key = :name
+
   def NoteStat.note_count
     query = <<-SQL
       select count(*) from events_notes en;

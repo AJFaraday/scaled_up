@@ -1,5 +1,11 @@
 <h2><%= Note.model_name.human(count: 2) %></h2>
 
+<%= render partial: 'shared/bar_chart', 
+           locals: {
+             data: @event_source.note_names_bar_data,
+             name: 'note_bar_chart'
+           } %>
+
 <table class='table'>
   <thead>
     <tr>
