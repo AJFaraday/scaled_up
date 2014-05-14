@@ -1,22 +1,39 @@
-<h2><%= NoteStat.model_name.human(count: 2) %></h2>
+<h1><%= NoteStat.model_name.human(count: 2) %></h1>
+
 <div class='text-center'>
   <div class='massive_stat'>
     <%= @note_count %>
   </div>
   notes have been played.
 </div>
+
+
+<canvas id='note_names_chart' width ='350px' height='200px'></canvas>
+<script type='text/javascript'>
+  var ctx = $('#note_names_chart').get(0).getContext('2d');
+  
+  var data = <%= raw NoteStat.note_names_bar_data %>;
+
+  var bar_options = {
+    animation: false,
+    barValueSpacing: 0
+  }
+
+  var colour_chart = new Chart(ctx).Bar(data,bar_options);
+</script>
+
 <table class='table'>
   <thead>
     <tr>
-      <th><%= NoteStat.human_attribute_name(:name) %></th>
-      <th><%= NoteStat.human_attribute_name(:cnt) %></th>
+      <td><%= NoteStat.human_attribute_name(:name) %></td>
+      <td><%= NoteStat.human_attribute_name(:cnt)%></td>
     </tr>
   </thead>
   <tbody>
-    <% @note_stats.each do |stat| %>
+    <% NoteStat.note_name_stats.sort_by{|l,v| v}.reverse.each do |name,cnt| %>
       <tr>
-        <td><%= stat.name %></td>
-        <td><%= stat.cnt %></td>
+        <td><%= name %></td>
+        <td><%= cnt  %></td>
       </tr>
     <% end %>
   </tbody>
