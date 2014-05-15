@@ -14,10 +14,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @event_source.note_stats.each do |note_stat| %>
+    <% @event_source.note_name_stats.sort_by{|k,v|v}.reverse.each do |note_stat| %>
       <tr>
-        <td><%= note_stat.name %></td>
-        <td><%= note_stat.cnt %></td>
+        <td><%= note_stat[0] %></td>
+        <td><%= note_stat[1] %></td>
       </tr>
     <% end %>
   </tbody>
