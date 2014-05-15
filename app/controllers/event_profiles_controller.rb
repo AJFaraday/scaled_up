@@ -3,6 +3,8 @@ class EventProfilesController < ApplicationController
   before_action :get_event_profiles, only: [:index,:stats]
   before_action :get_event_profile, only:[:update]
 
+  before_action :check_local_request, except:[:stats]
+
   def index
     
   end 
