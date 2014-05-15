@@ -35,6 +35,7 @@ class EventProfile < ActiveRecord::Base
   attr_accessor :pd_connection
   attr_accessor :current_event_message
   attr_accessor :steps_until_play
+  attr_accessor :current_played
 
   def unplayed_messages
     if last_played_message_id
@@ -73,13 +74,15 @@ class EventProfile < ActiveRecord::Base
       self.current_event_message = unplayed_messages.first
       if self.current_event_message
         self.steps_until_play = current_event_message.steps - 1
+        self.current_played = false
       end 
     end
   end 
 
   def play_current_event_message
-    if self.current_event_message and self.steps_until_play = 0 
+    if self.current_event_message and self.current_played == false
       self.current_event_message.play(self.pd_connection)
+      self.current_played = true
       self.last_played_message_id = self.current_event_message.id
     end
   end 
@@ -231,7 +234,8 @@ class EventProfile < ActiveRecord::Base
   def sample_name_stats
     counts = {}
     self.samples.order('name asc').each do |sample|
-      counts[sample.name] = event_profile_sample_stats.find_by_sample_id(sample.id).cnt
+      stat = event_profile_sample_stats.find_by_sample_id(sample.id)
+      counts[sample.name] = (stat ? event_profile_sample_stats.find_by_sample_id(sample.id).cnt : 0)
     end
     counts
   end   
