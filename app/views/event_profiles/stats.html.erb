@@ -3,8 +3,9 @@
 <% EventProfile.order('name asc').each do |event_profile| %>
   <h1><%= event_profile.name %></h1>
   <div class='row'>
-    <div class=''>
+    <div class='col-md-4'>
       <% if event_profile.notes.any? %>
+        <h2><%= Note.model_name.human(count: 2) %></h2>
         <%= render partial: 'shared/bar_chart',
                    locals: {
                      name: "note_stats_pie_chart_#{event_profile.id}",
@@ -12,12 +13,39 @@
                    } %> 
       <% end %>
       <% if event_profile.samples.any? %>
+        <h2><%= Sample.model_name.human(count: 2) %></h2> 
         <%= render partial: 'shared/bar_chart',
                    locals: {
                      name: "sample_stats_pie_chart_#{event_profile.id}",
                      data: event_profile.sample_names_bar_data
                    } %>
       <% end %>
+    </div>
+    <div class='col-md-4'>
+      <%= render partial: 'shared/pie_chart',
+                 locals: {
+                   name: "source_pie_chart_#{event_profile.id}",
+                   data: event_profile.source_stats_pie_data
+                 } %>
+    </div>
+    <div class='col-md-4'>
+      <h2><%= EventSource.model_name.human(count: 2) %></h2>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th><%= EventProfileSourceStat.human_attribute_name(:source) %></th>
+            <th><%= EventProfileSourceStat.human_attribute_name(:cnt) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% event_profile.event_profile_source_stats.limit(5).each do |source_stat| %>
+            <tr>
+              <td><%= source_stat.source %></td>
+              <td><%= source_stat.cnt %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div> 
 <% end %>

@@ -6,6 +6,7 @@ class EventProfile < ActiveRecord::Base
   delegate :name, to: :sample_group, allow_nil: true, prefix: 'sample_group'
 
   has_many :event_profile_sample_stats
+  has_many :event_profile_source_stats
 
   has_and_belongs_to_many :lengths
   belongs_to :default_length, 
@@ -249,6 +250,30 @@ class EventProfile < ActiveRecord::Base
       ]
     }
     data.to_json
+  end
+
+  PIE_COLOURS = %w{
+    #eeeeee
+    #cccccc
+    #aaaaaa
+    #888888
+    #666666
+    #444444
+    #222222
+    #000000
+  }
+
+  def source_stats_pie_data
+    i = -1
+    source_stats = event_profile_source_stats.collect{|x|x.cnt}
+    result = source_stats.collect do |stat|
+      i += 1
+      {
+        color: PIE_COLOURS[i % PIE_COLOURS.length],
+        value: stat
+      }
+    end
+    result.to_json    
   end
 
 end
