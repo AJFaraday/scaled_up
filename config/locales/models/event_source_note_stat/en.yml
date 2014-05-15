@@ -1,11 +1,11 @@
 en:
   activerecord:
     models:
-      event_source:
+      event_source_note_stat:
         one: Note Stat
         other: Note Stats
     attributes:
-      event_source:
+      event_source_note_stat:
         source: Source
         name: Note
         midi_note: MIDI Note

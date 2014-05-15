@@ -2,8 +2,8 @@ en:
   activerecord:
     models:
       event_source:
-        one: Source
-        other: Source
+        one: Event Source
+        other: Event Sources
     attributes:
       event_source:
         source: Name

@@ -1,10 +1,10 @@
 en:
   activerecord:
     models:
-      note_stat:
+      profile_stat:
         one: Profile Stat
         other: Profile Stats
     attributes:
-      note_stat:
-        name: Name
+      profile_stat:
+        name: Event Profile
         cnt: Count

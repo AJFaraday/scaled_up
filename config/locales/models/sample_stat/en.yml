@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      sample_stat:
+        one: Sample Stat
+        other: Sample Stats
+    attributes:
+      sample_stat:
+        name: Sample
+        cnt: Count
