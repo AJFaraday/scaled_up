@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      length:
+        one: Note Length
+        other: Note Length
+    attributes:
+      length:
+        name: Name
+        steps: Steps
+        image: Image

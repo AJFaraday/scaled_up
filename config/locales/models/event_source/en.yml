@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      event_source:
+        one: Source
+        other: Source
+    attributes:
+      event_source:
+        source: Name
+        cnt: Count

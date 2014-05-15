@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      event_profile_sample_stat:
+        one: Source Stat
+        other: Source Stats
+    attributes:
+      event_profile_sample_stat:
+        event_profile_id: Event Profile ID
+        sample_id: Sample ID
+        sample_name: Sample
+        cnt: Count

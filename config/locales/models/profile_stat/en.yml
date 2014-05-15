@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      note_stat:
+        one: Profile Stat
+        other: Profile Stats
+    attributes:
+      note_stat:
+        name: Name
+        cnt: Count

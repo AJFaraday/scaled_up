@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      note_stat:
+        one: Note Stat
+        other: Note Stats
+    attributes:
+      note_stat:
+        name: Name
+        midi_note: MIDI Note
+        cnt: Count
