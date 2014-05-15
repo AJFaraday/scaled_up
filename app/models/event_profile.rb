@@ -78,7 +78,7 @@ class EventProfile < ActiveRecord::Base
   end 
 
   def play_current_event_message
-    if self.current_event_message and !self.current_event_message.played?
+    if self.current_event_message and self.steps_until_play = 0 
       self.current_event_message.play(self.pd_connection)
       self.last_played_message_id = self.current_event_message.id
     end
