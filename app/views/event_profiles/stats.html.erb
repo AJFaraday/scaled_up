@@ -3,10 +3,21 @@
 <% EventProfile.order('name asc').each do |event_profile| %>
   <h1><%= event_profile.name %></h1>
   <div class='row'>
-    <%= render partial: 'shared/bar_chart',
-               locals: {
-                 name: "note_stats_pie_chart_#{event_profile.id}",
-                 data: event_profile.note_names_bar_data
-               } %> 
+    <div class=''>
+      <% if event_profile.notes.any? %>
+        <%= render partial: 'shared/bar_chart',
+                   locals: {
+                     name: "note_stats_pie_chart_#{event_profile.id}",
+                     data: event_profile.note_names_bar_data
+                   } %> 
+      <% end %>
+      <% if event_profile.samples.any? %>
+        <%= render partial: 'shared/bar_chart',
+                   locals: {
+                     name: "sample_stats_pie_chart_#{event_profile.id}",
+                     data: event_profile.sample_names_bar_data
+                   } %>
+      <% end %>
+    </div>
   </div> 
 <% end %>

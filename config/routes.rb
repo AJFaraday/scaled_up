@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     collection do
       get :stats
     end
+    member do 
+      get :profile_stats
+    end
   end
 
   resources :event_sources, only: [:index,:show]

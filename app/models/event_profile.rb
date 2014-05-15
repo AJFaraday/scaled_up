@@ -5,6 +5,8 @@ class EventProfile < ActiveRecord::Base
 
   delegate :name, to: :sample_group, allow_nil: true, prefix: 'sample_group'
 
+  has_many :event_profile_sample_stats
+
   has_and_belongs_to_many :lengths
   belongs_to :default_length, 
              class_name: 'Length',
@@ -224,5 +226,29 @@ class EventProfile < ActiveRecord::Base
     data.to_json
   end
 
+
+  def sample_name_stats
+    counts = {}
+    self.samples.order('name asc').each do |sample|
+      counts[sample.name] = event_profile_sample_stats.find_by_sample_id(sample.id).cnt
+    end
+    counts
+  end   
+
+  def sample_names_bar_data
+    name_stats = sample_name_stats
+    samples = name_stats.keys
+    data = {
+      labels: samples,
+      datasets: [
+        {
+          fillColor: '#FFFFFF',
+          strokeColor: '#000000',
+          data: name_stats.values
+        }
+      ]
+    }
+    data.to_json
+  end
 
 end
