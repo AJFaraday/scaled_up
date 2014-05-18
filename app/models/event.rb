@@ -29,7 +29,7 @@ class Event < ActiveRecord::Base
   after_create :create_event_message
 
   def init_event_profile
-    if EventProfile.active.any?
+    if self.new_record? and EventProfile.active.any?
       self.event_profile_id ||= EventProfile.active.first.id
     end
   end 
