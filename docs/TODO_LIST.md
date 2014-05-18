@@ -16,6 +16,7 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * Write controller tests - yawn
 * Write feature tests - eek
 * Re-finish translations
+* Work out how to block many spoofed events (see below)
 
 ## Issues 
 
@@ -23,3 +24,11 @@ Pending me using a proper issue tracking system:
 
 1. ~~Select an event profile - Change note value - click note/sample - note value reverts~~
 
+## Spoofed HTTP call event problem
+
+During the demo at BACON 2014 the server recieved 330 identical event create calls from the same source in a short space of time. 
+
+a: This may have contributed to the server slowing down
+b: It is against the spirit of the app, which should be a democratic music collaboration tool, which can not be played by just one person.
+
+I think this should probably involve the app adding a black-list rule to the server when it detects too many event create requests from a single source, so the rails app doesn`t process requests from that IP. Currently I don`t know a way to fix this. 
