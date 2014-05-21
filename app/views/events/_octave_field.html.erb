@@ -5,17 +5,26 @@
   >
     Octave <%= octave %>
   </div>
-  <% Note::NOTE_NAMES.each do |note_name| %>
-    <% full_note_name = "#{note_name}#{octave}" %>
+  <% Note::NOTE_NAMES.each_with_index do |note_name,index| %>
+      
+    <% midi_note = (octave.to_i * 12) + index %>
+    <% note = Note.find_by_midi_note(midi_note) %>
+    <% if Scale.current.note_indexes.include?(index) and 
+         midi_note >= @event_profile.min_note and 
+         midi_note <= @event_profile.max_note
+         note_active = true
+       else
+         note_active = false
+       end
+    %>
     <div 
       class='
         note 
         <%= note_colour(note_name) %> 
         <%= note_name.gsub('#','-sharp') %>
-        <%= @event_profile.has_note?(full_note_name) ? 'active' : 'inactive' %>
-        <%= 'selected' if @event.has_note?(full_note_name)%>
+        <%= note_active ? 'active' : 'inactive' %>
       '
-      data-value='<%= Note.find_by_name(full_note_name).midi_note %>'
+      data-value='<%= note.midi_note %>'
     >
       <%= note_name %>
     </div>

@@ -1,4 +1,4 @@
-    <% if @event_profile.notes.any? %>
+    <% if @event_profile.has_notes? %>
       <div id='midi_fields' style='display:none;'>
         <% @event.midi_notes.each_with_index do |midi_note,index| %>
           <input type='hidden' 

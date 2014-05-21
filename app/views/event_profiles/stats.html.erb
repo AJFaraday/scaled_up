@@ -4,7 +4,7 @@
   <h1><%= event_profile.name %></h1>
   <div class='row'>
     <div class='col-md-4'>
-      <% if event_profile.notes.any? %>
+      <% if event_profile.has_notes? %>
         <h2><%= Note.model_name.human(count: 2) %></h2>
         <%= render partial: 'shared/bar_chart',
                    locals: {

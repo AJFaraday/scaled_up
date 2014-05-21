@@ -26,5 +26,10 @@ class Note < ActiveRecord::Base
       midi_note += 1
     end
   end 
- 
+
+
+  def active
+    Scale.current.midi_notes.include?(self.midi_note)
+  end
+
 end

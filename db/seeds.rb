@@ -36,9 +36,9 @@ unless Length.count > 0
 end
 
 
-unless EventProfile.find_by_name('Chromatic Bass')
+unless EventProfile.find_by_name('Bass')
   EventProfile.create({
-    name: 'Chromatic Bass',
+    name: 'Bass',
     no_of_notes: 1, 
     min_note: 36,
     max_note: 60,
@@ -50,24 +50,10 @@ unless EventProfile.find_by_name('Chromatic Bass')
   })
 end
 
-unless EventProfile.find_by_name('Pentatonic Bass')
-  EventProfile.create({
-    name: 'Pentatonic Bass',
-    no_of_notes: 1, 
-    min_note: 36,
-    max_note: 60,
-    midi_notes: [36,39,41,43,46,48,51,53,55,58,60],
-    length_steps: [1,2,3,4,8],
-    default_length_steps: 2, 
-    active: false,
-    ip_address: '127.0.0.1',
-    port: 9901
-  })
-end
 
-unless EventProfile.find_by_name('Chromatic Blip')
+unless EventProfile.find_by_name('Blip')
   EventProfile.create({
-    name: 'Chromatic Blip',
+    name: 'Blip',
     no_of_notes: 1,
     min_note: 60,
     max_note: 95,
@@ -79,27 +65,9 @@ unless EventProfile.find_by_name('Chromatic Blip')
   })
 end
 
-unless EventProfile.find_by_name('Pentatonic Blip')
+unless EventProfile.find_by_name('Chord')
   EventProfile.create({
-    name: 'Pentatonic Blip',
-    no_of_notes: 1,
-    min_note: 60,
-    max_note: 94,
-    midi_notes: [60,63,65,67,70,
-                 72,75,77,79,82,
-                 84,87,89,91,94],
-    length_steps: [1,2,4],
-    default_length_steps: 2,
-    active: false, 
-    ip_address: '127.0.0.1',
-    port: 9911
-  })
-end
-
-
-unless EventProfile.find_by_name('Chromatic Chord')
-  EventProfile.create({
-    name: 'Chromatic Chord',
+    name: 'Chord',
     no_of_notes: 3,
     min_note: 60,
     max_note: 79,
@@ -108,21 +76,6 @@ unless EventProfile.find_by_name('Chromatic Chord')
     active: true,
     ip_address: '127.0.0.1',
     port: 9920
-  })
-end
-
-unless EventProfile.find_by_name('Pentatonic Chord')
-  EventProfile.create({
-    name: 'Pentatonic Chord',
-    no_of_notes: 3,
-    min_note: 60,
-    max_note: 79,
-    midi_notes: [60,63,65,67,70,72,75,77,79],    
-    length_steps: [4,8],
-    default_length_steps: 8,
-    active: false,
-    ip_address: '127.0.0.1',
-    port: 9921
   })
 end
 
@@ -139,8 +92,43 @@ unless EventProfile.find_by_name('Drum Kit')
   })
 end
 
+unless Scale.find_by_name('Chromatic')
+  Scale.create!(
+    name: 'Chromatic',
+    current: true,
+    note_indexes: [0,1,2,3,4,5,6,7,8,9,10,11]
+  )
+end
 
+unless Scale.find_by_name('Major')
+  Scale.create!(
+    name: 'Major',
+    current: false,
+    note_indexes: [0,2,4,5,7,9,11]
+  )
+end
 
+unless Scale.find_by_name('Minor')
+  Scale.create!(
+    name: 'Minor',
+    current: false,
+    note_indexes: [0,2,3,5,7,8,10]
+  )
+end
 
+unless Scale.find_by_name('Major Pentatonic')
+  Scale.create!(
+    name: 'Major Pentatonic',
+    current: false,
+    note_indexes: [0,2,4,7,9]
+  )
+end
 
+unless Scale.find_by_name('Minor Pentatonic')
+  Scale.create!(
+    name: 'Minor Pentatonic',
+    current: false,
+    note_indexes: [0,3,5,7,10]
+  )
+end
 

@@ -34,12 +34,6 @@ class EventProfileTest < ActiveSupport::TestCase
     assert_equal 5, event_profile.last_played_message_id
   end
 
-  test 'has_note?' do
-    event_profile = EventProfile.find(1)
-    event_profile.initialise_notes
-    assert event_profile.has_note?('C2')
-    assert !event_profile.has_note?('C5')
-  end
 
   test 'notes_in_range' do
     event_profile = EventProfile.find(1)
