@@ -23,6 +23,7 @@ Basically, it is a web interface for multiple people to send control input to th
 
 * `git clone https://github.com/AJFaraday/scaled_up.git`
 * bundle install
+* `cp config/database.yml.template config/database.yml`
 * (Modify config/database.yml if required, it's currently for a database with an unprotected root user)
 * `rake db:setup`
 
