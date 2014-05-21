@@ -6,6 +6,12 @@ Rails.application.routes.draw do
       post :renew_form
     end
   end
+
+  resources :scales, only: [] do 
+    member do
+      post :set_current
+    end
+  end
   
   resources :system_settings, except: [:edit, :update] do
     get :edit, on: :collection
