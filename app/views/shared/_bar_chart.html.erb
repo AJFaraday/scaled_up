@@ -4,9 +4,20 @@
   
   var data = <%= raw data %>;
 
+  var max_value = Math.max.apply(null,data['datasets'][0]['data']);
+  if(Math.min.apply(null,data['datasets'][0]['data']) > 20) {
+    var min_value = (Math.min.apply(null,data['datasets'][0]['data'])) - 5 
+  } else {
+    var min_value = 0
+  }
+
   var bar_options = {
     animation: false,
-    barValueSpacing: 0
+    barValueSpacing: 0,
+    scaleStartValue: min_value,
+    scaleOverride: true,
+    scaleSteps: max_value,
+    scaleStepWidth: 1
   }
 
   var colour_chart = new Chart(ctx).Bar(data,bar_options);
