@@ -7,19 +7,15 @@
   samples have been played.
 </div>
 
-<canvas id='sample_names_chart' width ='350px' height='200px'></canvas>
-<script type='text/javascript'>
-  var ctx = $('#sample_names_chart').get(0).getContext('2d');
-  
-  var data = <%= raw SampleStat.bar_data %>;
+<%= render( 
+      partial: 'shared/bar_chart',
+      locals: {
+        name: "sample_names_chart",
+        data: SampleStat.bar_data
+      } 
+    ) 
+%>
 
-  var bar_options = {
-    animation: false,
-    barValueSpacing: 0
-  }
-
-  var colour_chart = new Chart(ctx).Bar(data,bar_options);
-</script>
 
 
 <table class='table'>

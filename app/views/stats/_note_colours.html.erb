@@ -1,16 +1,11 @@
-<canvas id='colour_chart' width ='300px' height='300px'></canvas>
-<script type='text/javascript'>
-  var ctx = $('#colour_chart').get(0).getContext('2d');
-  
-  var data = <%= raw NoteStat.colour_stats_pie_data %>;
-
-  var pie_options = {
-    animation: false
-  }
-
-  var colour_chart = new Chart(ctx).Pie(data,pie_options);
-</script>
-
+<%= render(
+      partial: 'shared/pie_chart',
+      locals: {
+        name: "colour_chart",
+        data: NoteStat.colour_stats_pie_data
+      }
+    )
+%>
 
 <table class='table'>
   <thead>

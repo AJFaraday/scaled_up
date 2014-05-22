@@ -7,20 +7,14 @@
   notes have been played.
 </div>
 
-
-<canvas id='note_names_chart' width ='350px' height='200px'></canvas>
-<script type='text/javascript'>
-  var ctx = $('#note_names_chart').get(0).getContext('2d');
-  
-  var data = <%= raw NoteStat.note_names_bar_data %>;
-
-  var bar_options = {
-    animation: false,
-    barValueSpacing: 0
-  }
-
-  var colour_chart = new Chart(ctx).Bar(data,bar_options);
-</script>
+<%= render(
+      partial: 'shared/bar_chart',
+      locals: {
+        data: NoteStat.note_names_bar_data,
+        name: "note_names_chart"
+      }
+    )
+%>
 
 <%= render partial: 'note_colours' %>
 
