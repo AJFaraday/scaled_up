@@ -1,4 +1,4 @@
-#N canvas 3 60 686 233 10;
+#N canvas 3 61 686 233 10;
 #X text 34 8 Scaled Up receiver MK2;
 #X text 34 22 Simple Sounds;
 #X obj 28 106 simple/bass;
@@ -22,6 +22,9 @@
 #X obj 140 106 simple/blip;
 #X obj 140 172 simple/blip;
 #X obj 250 104 simple/chord;
+#X obj 532 55 s pd;
+#X msg 532 35 dsp 1;
+#X obj 532 15 loadbang;
 #X connect 8 0 14 0;
 #X connect 8 0 22 0;
 #X connect 9 0 3 0;
@@ -36,3 +39,5 @@
 #X connect 18 0 20 0;
 #X connect 19 0 16 0;
 #X connect 19 0 21 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
