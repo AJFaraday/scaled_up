@@ -9,7 +9,7 @@ If you are reading this and you are not Andrew Faraday, items on this list could
 * Write a helper method for keyboard component for use in event and event profile UI.
 * Write a helper method for length select component, for use in event (single) and event profile (multiple) UI
 * UI to modify event profiles, build sample groups etc.
-** Set options with a slider, such as... http://www.eyecon.ro/bootstrap-slider/
+  * Set options with a slider, such as... http://www.eyecon.ro/bootstrap-slider/
 * UI to show queued events.
 * UI to show the sequence which has yet been played (not sure about this)
 * More than one option for pure data patches, "audio skinning"
