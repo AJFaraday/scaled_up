@@ -3,31 +3,11 @@
 one:
   name: "Scale 1"
   current: true
-  a: true
-  a_sharp: true
-  b: true
-  c: true
-  c_sharp: true
-  d: true
-  d_sharp: true
-  e: true
-  f: true
-  f_sharp: true
-  g: true
-  g_sharp: true
+  bits: 4095 # Chromatic
+  offset: 0  # C  
 
 two:
   name: "Scale 2"
   current: false
-  a: true
-  a_sharp: false
-  b: false
-  c: true
-  c_sharp: false
-  d: false
-  d_sharp: false
-  e: false
-  f: false
-  f_sharp: true
-  g: false
-  g_sharp: false
+  bits: 2386 # Minor Pentatonic
+  offset: 2  # D

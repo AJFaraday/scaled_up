@@ -96,7 +96,8 @@ unless Scale.find_by_name('Chromatic')
   Scale.create!(
     name: 'Chromatic',
     current: true,
-    note_indexes: [0,1,2,3,4,5,6,7,8,9,10,11]
+    note_indexes: [0,1,2,3,4,5,6,7,8,9,10,11],
+    offset: 0
   )
 end
 
@@ -104,7 +105,8 @@ unless Scale.find_by_name('Major')
   Scale.create!(
     name: 'Major',
     current: false,
-    note_indexes: [0,2,4,5,7,9,11]
+    note_indexes: [0,2,4,5,7,9,11],
+    offset: 0
   )
 end
 
@@ -112,7 +114,8 @@ unless Scale.find_by_name('Minor')
   Scale.create!(
     name: 'Minor',
     current: false,
-    note_indexes: [0,2,3,5,7,8,10]
+    note_indexes: [0,2,3,5,7,8,10],
+    offset: 0
   )
 end
 
@@ -120,7 +123,8 @@ unless Scale.find_by_name('Major Pentatonic')
   Scale.create!(
     name: 'Major Pentatonic',
     current: false,
-    note_indexes: [0,2,4,7,9]
+    note_indexes: [0,2,4,7,9],
+    offset: 0
   )
 end
 
@@ -128,7 +132,8 @@ unless Scale.find_by_name('Minor Pentatonic')
   Scale.create!(
     name: 'Minor Pentatonic',
     current: false,
-    note_indexes: [0,3,5,7,10]
+    note_indexes: [0,3,5,7,10],
+    offset: 0
   )
 end
 

@@ -5,7 +5,6 @@ class Scale < ActiveRecord::Base
   cattr_accessor :current_scale
 
   def Scale.current
-    return @current_scale if @current_scale
     @current_scale = Scale.where(:current => true).first
   end
 
@@ -30,29 +29,31 @@ class Scale < ActiveRecord::Base
   }
 
 
-  # Accepts an array of indexes and sets the columns
+  # Accepts an array of indexes and sets bits column
   #
-  # e.g. [0,4,7,8] will 'true' c, e, g and g_sharp
+  # e.g. [0,4,7,8] will result in the bit-mask '100010011000'
   def note_indexes=(indexes)
-    Scale::NOTES.each{|note|self.send("#{note}=",false)}
+    note_bits = ('0' * 12)
     indexes.each do |index|
-      self.send("#{Scale::NOTES[index]}=", true)
+      note_bits[index] = '1'
     end
+    self.bits=note_bits.to_i(2)
   end
 
   def note_bits
-    Scale::NOTES.collect{|note_name| self.send(note_name)}
+    bits.to_s(2).chars.collect{|x|x=='1'}
   end
  
   def note_indexes
-    Array(0..11).select{|i| note_bits[i]}
+    array = Array(0..11).select{|i| note_bits[i]}
+    array.collect{|x|(x + self.offset) % 12}.sort
   end
 
   # running out of words for notes, used notez
   def midi_notes
     midi_notez = self.note_indexes.collect do |index|
       10.times.collect do |octave|
-        (octave * 12) + index
+        ((octave * 12) + index) 
       end
     end
     midi_notez = midi_notez.flatten.sort
