@@ -4,18 +4,17 @@ This is a reference for things which have not yet been developed for Scaled Up^.
 
 If you are reading this and you are not Andrew Faraday, items on this list could be your contribution to Scaled Up^
 
-* Refactor event profile notes, instead have a scale with an option of only 12 notes, stamped across octaves, only one scale active at a time relevant to all note event profiles
 * Sequence events: Users select X notes and they are played back in this order.
 * Some kind of sequence where the user input is a change to one step in the event. 
 * Write a helper method for keyboard component for use in event and event profile UI.
 * Write a helper method for length select component, for use in event (single) and event profile (multiple) UI
-* UI to modify event profiles, note options, build sample groups etc.
+* UI to modify event profiles, build sample groups etc.
+** Set options with a slider, such as... http://www.eyecon.ro/bootstrap-slider/
 * UI to show queued events.
 * UI to show the sequence which has yet been played (not sure about this)
 * More than one option for pure data patches, "audio skinning"
 * Write controller tests - yawn
 * Write feature tests - eek
-* Re-finish translations
 * Work out how to block many spoofed events (see below)
 
 ## Issues 
