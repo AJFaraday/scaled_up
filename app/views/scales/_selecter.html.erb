@@ -1,3 +1,25 @@
-<%= select_tag :id, 
-               options_for_select(Scale.all.collect{|x|[x.name,x.id]}) %>
+<div id='scale_holder'>
+  <h1><%= Scale.model_name.human %>: <%= Scale.current.full_name %></h1>
+  
+  <%= select_tag(
+        :offset, 
+        options_for_select(
+          Scale.offset_options, 
+          selected: Scale.current.offset
+        ),
+        class: 'scale_select'
+      ) %>
+  
+  <%= select_tag(
+        :id, 
+        options_for_select(
+          Scale.all.collect{|x|[x.name,x.id]},
+          selected: Scale.current.id
+        ),
+        class: 'scale_select'
+      ) %>
+</div>
 
+<script type='text/javascript'>
+  init_scale_select();
+</script>

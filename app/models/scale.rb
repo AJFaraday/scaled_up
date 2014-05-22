@@ -1,11 +1,30 @@
 class Scale < ActiveRecord::Base
 
+  NOTES=%w{
+    c c_sharp 
+    d d_sharp 
+    e
+    f f_sharp 
+    g g_sharp 
+    a a_sharp 
+    b
+  }
+
   validates_presence_of :name
 
   cattr_accessor :current_scale
 
   def Scale.current
     @current_scale = Scale.where(:current => true).first
+  end
+
+  def Scale.offset_options
+    i = 0
+    Scale::NOTES.collect do |x|
+      option=[Scale.human_attribute_name(x),i]
+      i+=1
+      option
+    end
   end
 
   after_save :set_current
@@ -18,16 +37,13 @@ class Scale < ActiveRecord::Base
     end
   end
 
-  NOTES=%w{
-    c c_sharp 
-    d d_sharp 
-    e
-    f f_sharp 
-    g g_sharp 
-    a a_sharp 
-    b
-  }
+  def full_name
+    "#{key} #{name}"
+  end
 
+  def key
+    Scale.human_attribute_name(Scale::NOTES[self.offset])
+  end
 
   # Accepts an array of indexes and sets bits column
   #

@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    models:
+      scale:
+        one: Scale
+        other: Scales
+    attributes:
+      scale: 
+        name: Name
+        offset: Root
+        bits: Bitmap
+        c: C
+        c_sharp: "C#"
+        d: D
+        d_sharp: "D#"
+        e: E
+        f: F
+        f_sharp: "F#"
+        g: G
+        g_sharp: "G#"
+        a: A
+        a_sharp: "A#"
+        b: B
