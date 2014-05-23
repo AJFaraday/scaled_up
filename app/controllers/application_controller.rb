@@ -3,15 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def check_local_request
-    unless local_request?
-      flash[:warning] = "This action can only be called from the conductors computer."
+  def check_conductor
+    unless conductor?
+      flash[:warning] = "This action can only be called from the conductors computers."
       redirect_to '/'
     end
   end
 
-  def local_request?
-    puts request.remote_ip
-    request.remote_ip == '127.0.0.1'
+  def conductor?
+    conductor_ips = YAML.load_file("#{Rails.root}/config/conductor_ips.yml")
+    conductor_ips.include?(request.remote_ip)
   end
 end

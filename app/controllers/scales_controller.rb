@@ -1,6 +1,6 @@
 class ScalesController < ApplicationController
  
-  before_action :check_local_request
+  before_action :check_conductor
 
   def set_current
     @scale = Scale.find(params[:id])

@@ -15,9 +15,9 @@ module ApplicationHelper
     end
   end
 
-  def local_request?
-    puts request.remote_ip
-    request.remote_ip == '127.0.0.1'
+  def conductor?
+    conductor_ips = YAML.load_file("#{Rails.root}/config/conductor_ips.yml")
+    conductor_ips.include?(request.remote_ip)
   end
 
   

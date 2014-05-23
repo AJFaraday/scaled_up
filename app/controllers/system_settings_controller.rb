@@ -8,7 +8,7 @@
 
 class SystemSettingsController < ApplicationController
 
-  before_action :check_local_request
+  before_action :check_conductor
   before_action :get_system_settings
 
   def index

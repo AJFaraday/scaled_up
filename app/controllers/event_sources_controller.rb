@@ -1,5 +1,7 @@
 class EventSourcesController < ApplicationController
 
+  before_action :check_conductor
+
   def index
     @count = EventSource.count
     @event_sources = EventSource.all.order('cnt desc')

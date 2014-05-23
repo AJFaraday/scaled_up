@@ -1,5 +1,7 @@
 class StatsController < ApplicationController
 
+  before_action :check_conductor
+
   def index
     @note_count   = NoteStat.note_count
     @note_stats   = NoteStat.all.order('cnt desc')
