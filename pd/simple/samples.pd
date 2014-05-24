@@ -1,11 +1,11 @@
-#N canvas 592 219 752 496 10;
+#N canvas 592 222 752 496 10;
 #X obj 30 17 inlet;
 #X obj 590 114 loadbang;
 #X obj 590 139 del 1000;
 #X obj 590 165 s sample_load;
 #X obj 590 20 loadbang;
 #X obj 590 64 folder_list;
-#N canvas 88 394 450 300 create_sample_players 0;
+#N canvas 88 396 450 300 create_sample_players 0;
 #X obj 20 17 inlet;
 #X obj 20 41 t b s;
 #X obj 20 240 s pd-samples.pd;
@@ -36,7 +36,7 @@
 #X connect 11 0 12 0;
 #X connect 12 0 2 0;
 #X restore 590 88 pd create_sample_players;
-#N canvas 913 384 450 300 audio_output 0;
+#N canvas 913 385 450 300 audio_output 0;
 #X obj 17 14 catch~ sample_bus;
 #X obj 18 55 *~ 0.5;
 #X obj 17 83 throw~ dac;
@@ -45,30 +45,9 @@
 #X restore 590 189 pd audio_output;
 #X msg 590 41 symbol audio/*.wav;
 #X obj 30 44 route sample;
-#X obj 30 70 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/cymbal.wav
-;
-#X obj 30 110 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/hat.wav
-;
-#X obj 30 150 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/kick.wav
-;
-#X obj 30 190 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/snare.wav
-;
-#X obj 30 230 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/tom1.wav
-;
-#X obj 30 270 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/tom2.wav
-;
-#X obj 30 310 sample_player /home/ajfaraday/ScaledUp/pd/simple/audio/tom3.wav
-;
 #X connect 0 0 9 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 8 0;
 #X connect 5 0 6 0;
 #X connect 8 0 5 0;
-#X connect 9 0 10 0;
-#X connect 9 0 11 0;
-#X connect 9 0 12 0;
-#X connect 9 0 13 0;
-#X connect 9 0 14 0;
-#X connect 9 0 15 0;
-#X connect 9 0 16 0;
