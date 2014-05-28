@@ -17,6 +17,14 @@ sample_groups = {
     Top3: 'tom3',
     Cymbal: 'cymbal'
   },
+  Kalimba: {
+    # For some reason the JSON style hash syntax doesn't like numbers as keys
+    "1" => "kalimba1",
+    "2" => "kalimba2",
+    "3" => "kalimba3",
+    "4" => "kalimba4",
+    "5" => "kalimba5",
+  },
   Noises: {
     Beep: 'beep',
     Boop: 'boop',
@@ -59,7 +67,7 @@ unless EventProfile.find_by_name('Blip')
     max_note: 95,
     length_steps: [1,2,4],
     default_length_steps: 2,
-    active: true,
+    active: false,
     ip_address: '127.0.0.1',
     port: 9910
   })
@@ -73,7 +81,7 @@ unless EventProfile.find_by_name('Chord')
     max_note: 79,
     length_steps: [4,8],
     default_length_steps: 8,
-    active: true,
+    active: false,
     ip_address: '127.0.0.1',
     port: 9920
   })
@@ -91,6 +99,19 @@ unless EventProfile.find_by_name('Drum Kit')
     port: 9930
   })
 end
+
+unless EventProfile.find_by_name('Kalimba')
+  EventProfile.create({
+    name: 'Kalimba',
+    sample_group_id: SampleGroup.find_by_name('Kalimba').id,
+    length_steps: [1,2,4,8],
+    default_length_steps: 1,
+    active: false,
+    ip_address: '127.0.0.1',
+    port: 9930
+  })
+end
+
 
 unless Scale.find_by_name('Chromatic')
   Scale.create!(
@@ -133,6 +154,24 @@ unless Scale.find_by_name('Minor Pentatonic')
     name: 'Minor Pentatonic',
     current: false,
     note_indexes: [0,3,5,7,10],
+    offset: 0
+  )
+end
+
+unless Scale.find_by_name('Whole Tone')
+  Scale.create!(
+    name: 'Whole Tone',
+    current: false,
+    note_indexes: [0,2,4,6,8,10],
+    offset: 0
+  )
+end
+
+unless Scale.find_by_name('Diminished')
+  Scale.create!(
+    name: 'Diminished',
+    current: false,
+    note_indexes: [0,3,6,9],
     offset: 0
   )
 end
