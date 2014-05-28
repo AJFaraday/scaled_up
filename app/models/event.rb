@@ -46,6 +46,8 @@ class Event < ActiveRecord::Base
       @display_message << " #{self.length.name}"
     elsif self.sample
       @display_message = @message = "sample #{self.sample.name};"
+    else
+      return
     end
     EventMessage.create!(
       event_id: self.id,
