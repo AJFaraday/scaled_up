@@ -1,2 +1,4 @@
-$('.main').html("<%= escape_javascript render :partial => 'form' %>");
-init_form();
+if (<%= (!!@event_profile).to_s %>) {
+  $('.main').html("<%= escape_javascript render :partial => 'form' %>");
+  init_form();
+}

@@ -1,3 +1,5 @@
+// These three functions are used to build the array of notes in 
+// hidden fields for multi-note events
 function next_note_index() {
   var indexes = $.map($('#midi_fields :input'), function(n, i){
     var ind = /\[(.?)\]/g.exec($(n).attr('name'))[1];
@@ -102,9 +104,7 @@ function show_form_if_source(){
     setTimeout(
       function(){
         renew_form();
-        if($('#main_form').length < 1 & $('#event_source').length == 1){
-          init_form();
-        }
+        show_form_if_source();
       },
       2000
     );
