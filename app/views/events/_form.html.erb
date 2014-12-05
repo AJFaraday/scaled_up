@@ -34,7 +34,7 @@
                      name='event[length_id]'
                      <%= 'checked' if length.id == @event.length_id %>
                      value='<%= length.id %>'>
-              <%= image_tag "/assets/notes/#{length.image}",
+              <%= image_tag "notes/#{length.image}",
                             alt: length.name,
                             title: length.name,
                             class: 'length_image' %>
