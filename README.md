@@ -22,6 +22,7 @@ Basically, it is a web interface for multiple people to send control input to th
 # Installation
 
 * `git clone https://github.com/AJFaraday/scaled_up.git`
+* `cd scaled_up`
 * bundle install
 * `cp config/database.yml.template config/database.yml`
 * (Modify config/database.yml if required, it's currently for a database with an unprotected root user)
@@ -31,9 +32,9 @@ Basically, it is a web interface for multiple people to send control input to th
 
 (from the root directory of Scaled Up^)
 
-* Open Pure Data and open any file from pd beginning with su- and ending with .pd
+* Open Pure Data and open any file from pd/ beginning with su- and ending with .pd
 * `rake player:play`
-* `rails s`
+* (in a separate shell) `rails s`
 * Open a browser and point it to localhost:3000
 
 Options for PD patches:
